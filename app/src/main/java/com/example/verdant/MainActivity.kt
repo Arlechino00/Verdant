@@ -13,6 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.verdant.login.navigation.AppNavHost
 import com.example.verdant.login.ui.auth.AuthViewModel
+import com.example.verdant.navigation.BottomNavBar
+import com.example.verdant.ui.VerdantApp
+import com.example.verdant.ui.home.AddAppBar
 import com.example.verdant.ui.theme.VerdantTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -30,7 +33,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                   AppNavHost(viewModel)
+                   //AppNavHost(viewModel = viewModel)
+                    AppNavHost(viewModel = viewModel)
                 }
             }
         }

@@ -9,9 +9,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.example.verdant" />
-                  <option name="mobileSdkAppId" value="1:183397637442:android:e61cd54da9be0b6d2bbcdb" />
-                  <option name="projectId" value="testauth-f415c" />
-                  <option name="projectNumber" value="183397637442" />
+                  <option name="mobileSdkAppId" value="1:9010047108:android:94a1d0d4d59f86e45a7ad1" />
+                  <option name="projectId" value="verdant-af3e4" />
+                  <option name="projectNumber" value="9010047108" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
