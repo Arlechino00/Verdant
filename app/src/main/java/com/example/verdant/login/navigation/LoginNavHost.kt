@@ -12,6 +12,7 @@ import com.example.verdant.login.ui.auth.LoginScreen
 import com.example.verdant.login.ui.auth.SignupScreen
 import com.example.verdant.navigation.BottomNavBar
 import com.example.verdant.navigation.NavigationItem
+import com.example.verdant.ui.AI.AIUi
 import com.example.verdant.ui.VerdantApp
 import com.example.verdant.ui.home.ProfileScreen
 
@@ -55,7 +56,7 @@ fun AppNavHost(
         }
 
         composable(NavigationItem.Sherlock.route){
-            
+            AIUi(viewModel = viewModel, navController)
         }
 
 
