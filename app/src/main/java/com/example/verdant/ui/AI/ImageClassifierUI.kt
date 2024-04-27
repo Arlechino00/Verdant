@@ -25,22 +25,8 @@ import com.example.verdant.ui.AddAppBar
 import com.example.verdant.ui.BottomBar
 
 @Composable
-fun AIUi(
-    viewModel: AuthViewModel,
-    navController: NavController
-){
-    Scaffold(
-        //topBar = { AddAppBar(viewModel, navController) },
-        content = { padding ->
-            Surface(
-                modifier = Modifier.padding(padding),
-            ) {
-                AIButton()
-
-            }
-        },
-        //bottomBar = { BottomBar(viewModel = viewModel, navController = navController)}
-    )
+fun AIUi(){
+    Text(text = "Image Classifier")
 }
 
 @Composable
