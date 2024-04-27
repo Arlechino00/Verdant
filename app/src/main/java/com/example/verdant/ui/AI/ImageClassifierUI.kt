@@ -16,15 +16,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.verdant.R
 import com.example.verdant.login.ui.auth.AuthViewModel
-import com.example.verdant.navigation.NavigationHost
 import com.example.verdant.navigation.NavigationItem
-import com.example.verdant.ui.home.AddAppBar
-import com.example.verdant.ui.theme.VerdantTheme
+import com.example.verdant.ui.AddAppBar
+import com.example.verdant.ui.BottomBar
 
 @Composable
 fun AIUi(
@@ -32,7 +30,7 @@ fun AIUi(
     navController: NavController
 ){
     Scaffold(
-        topBar = { AddAppBar(viewModel, navController = navController) },
+        //topBar = { AddAppBar(viewModel, navController) },
         content = { padding ->
             Surface(
                 modifier = Modifier.padding(padding),
@@ -41,52 +39,7 @@ fun AIUi(
 
             }
         },
-        bottomBar = {
-            NavigationBar(
-                modifier = Modifier
-                    .background(MaterialTheme.colorScheme.scrim)
-            ) {
-                val items = listOf(
-                    NavigationItem.Home,
-                    NavigationItem.Discover,
-                    NavigationItem.Sherlock,
-                    NavigationItem.Profile
-                )
-                //val navController : NavHostController = rememberNavController()
-                val navBackStackEntry by navController.currentBackStackEntryAsState()
-                val currentRoute = navBackStackEntry?.destination?.route
-                items.forEach { it ->
-                    NavigationBarItem(selected = currentRoute == it.route,
-                        label = {
-                            Text(
-                                text = it.title,
-                            )
-                        },
-                        icon = {
-                            Icon(
-                                ImageVector.vectorResource(it.icon), contentDescription = null,
-                                //tint = MaterialTheme.colorScheme.
-                            )
-
-                        },
-
-                        onClick = {
-                            if (currentRoute != it.route) {
-
-                                navController.graph.startDestinationRoute?.let {
-                                    navController.popBackStack(it, true)
-                                }
-
-                                navController.navigate(it.route) {
-                                    launchSingleTop = true
-
-                                }
-
-                            }
-                        })
-                }
-            }
-        }
+        //bottomBar = { BottomBar(viewModel = viewModel, navController = navController)}
     )
 }
 

@@ -148,8 +148,8 @@ fun SignupScreen(viewModel: AuthViewModel?, navController: NavHostController) {
                     end.linkTo(parent.end, spacing.extraLarge)
                 }
                 .clickable {
-                    navController.navigate(NavigationItem.Auth.Login.route) {
-                        popUpTo(NavigationItem.Auth.SignIn.route) { inclusive = true }
+                    navController.navigate(NavigationItem.Login.route) {
+                        popUpTo(NavigationItem.SignIn.route) { inclusive = true }
                     }
                 },
             text = stringResource(id = R.string.already_have_account),
@@ -175,7 +175,7 @@ fun SignupScreen(viewModel: AuthViewModel?, navController: NavHostController) {
                 is Resource.Success -> {
                     LaunchedEffect(Unit) {
                         navController.navigate(NavigationItem.Profile.route) {
-                            popUpTo(NavigationItem.Auth.SignIn.route) { inclusive = true }
+                            popUpTo(NavigationItem.SignIn.route) { inclusive = true }
                         }
                     }
                 }

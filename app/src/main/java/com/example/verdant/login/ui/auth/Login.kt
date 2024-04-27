@@ -36,6 +36,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.verdant.AppUiState
 import com.example.verdant.R
 import com.example.verdant.login.data.Resource
 import com.example.verdant.navigation.NavigationItem
@@ -139,8 +140,8 @@ fun LoginScreen(viewModel: AuthViewModel?, navController: NavController) {
                     end.linkTo(parent.end, spacing.extraLarge)
                 }
                 .clickable {
-                    navController.navigate(NavigationItem.Auth.SignIn.route) {
-                        popUpTo(NavigationItem.Auth.Login.route) { inclusive = true }
+                    navController.navigate(NavigationItem.SignIn.route) {
+                        popUpTo(NavigationItem.Login.route) { inclusive = true }
                     }
                 },
             text = stringResource(id = R.string.dont_have_account),
@@ -166,7 +167,7 @@ fun LoginScreen(viewModel: AuthViewModel?, navController: NavController) {
                 is Resource.Success -> {
                     LaunchedEffect(Unit) {
                         navController.navigate(NavigationItem.Profile.route) {
-                            popUpTo(NavigationItem.Auth.Login.route) { inclusive = true }
+                            popUpTo(NavigationItem.Login.route) { inclusive = true }
                         }
                     }
                 }
