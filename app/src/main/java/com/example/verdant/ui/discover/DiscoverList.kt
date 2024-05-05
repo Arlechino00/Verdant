@@ -6,33 +6,28 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Checkbox
-import androidx.compose.material3.Divider
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberAsyncImagePainter
-import com.example.verdant.api.discovery.model.Plant
+import com.example.verdant.R
 import com.example.verdant.api.discovery.model.PlantItem
 
 @Composable
@@ -43,84 +38,74 @@ fun Discover() {
 }
 
 @Composable
-fun PlantCard(dataItem: PlantItem) {
-    Box(
-        Modifier
-            .height(200.dp)
-            .background(Color.Transparent)
-            .padding(horizontal = 6.dp)
-
+fun PlantCard(dataItem: PlantItem, modifier: Modifier = Modifier) {
+    Card(
+        modifier = modifier
+            .shadow(
+                shape = RoundedCornerShape(dimensionResource(id = R.dimen.list_item_inner_padding)), // Use rounded corners
+                elevation = 5.dp,
+                ambientColor = Color(0x33000000))
+        ,
+        elevation = CardDefaults.cardElevation(2.dp),
+        shape = RoundedCornerShape(dimensionResource(id = R.dimen.list_item_inner_padding)),
+        colors = CardDefaults.cardColors(MaterialTheme.colorScheme.onPrimary),
     ) {
-        Box(
+        Row(
             modifier = Modifier
-                .background(Color.Cyan, shape = RoundedCornerShape(20.dp))
                 .fillMaxWidth()
-                .fillMaxHeight(0.8f)
-                .align(Alignment.BottomCenter)
-
+                .size(dimensionResource(R.dimen.card_width))
+                .background(color = MaterialTheme.colorScheme.onPrimary),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(
-                text = dataItem.commonName ?: "Error",
-                maxLines = 1,
-                style = TextStyle(
-
-                    fontSize = if (dataItem.commonName == "Controller") {
-                        60.sp
-                    } else {
-                        70.sp
-                    },
-                    letterSpacing = 20.sp,
-                    color = Color.White.copy(alpha = 0.1f),
-                ),
-                modifier = Modifier.align(
-                    Alignment.Center
-                )
-
+            Image(
+                painter = rememberAsyncImagePainter(dataItem.defaultImage?.mediumUrl),
+                contentDescription = dataItem.commonName ?: "Error",
+                alignment = Alignment.Center,
+                contentScale = ContentScale.FillBounds,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .size(dimensionResource(id = R.dimen.card_width))
+                    .weight(0.4f)
             )
 
-        }
-        Image(
-            contentScale = ContentScale.Fit,
-            painter = rememberAsyncImagePainter(dataItem.defaultImage?.originalUrl),
-            contentDescription = null,
-            modifier = Modifier
-
-                .align(Alignment.CenterStart)
-                .graphicsLayer {
-                    translationY = (-50).toFloat()
-                    translationX = (-100).toFloat()
-                }
-                .padding(start = 10.dp)
-        )
-        Column(
-            modifier = Modifier
-                .align(Alignment.Center)
-                .padding(start = 40.dp)
-        ) {
-            Text(
-                dataItem.commonName ?: "Error",
-                fontSize = 30.sp,
-                color = Color.White,
-
+                Text(
+                    text = dataItem.commonName ?: "Error",
+                    style = MaterialTheme.typography.titleLarge,
+                    color = MaterialTheme.colorScheme.primary,
+                    fontWeight = FontWeight.W500,
+                    modifier = Modifier
+                        .padding(horizontal = dimensionResource(R.dimen.header_content_padding_vertical))
+                        .fillMaxWidth()
+                        .weight(1f)
                 )
-            Row {
-                Text("")
-            }
+
+
         }
+    }
+}
+
+@Composable
+fun PlantItemPhoto(dataItem: PlantItem, modifier: Modifier = Modifier) {
+    Box(modifier = modifier) {
+
     }
 }
 
 @Composable
 fun PlantList() {
     val viewModel: PlantViewModel = viewModel()
-    val PlantsData = viewModel.plantsData
+    val pl = viewModel.plantsData
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier
             .fillMaxSize()
     ) {
-        items(count = PlantsData.value.size) {
-            PlantCard(PlantsData.value[it])
+        items(count = pl.value.size) {
+            if(it !=0)
+                PlantCard(pl.value[it], modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.detail_card_outer_padding_horizontal)))
+            else             PlantCard(pl.value[it], modifier = Modifier.padding(top = dimensionResource(id = R.dimen.card_space)))
+
+
         }
 
     }
