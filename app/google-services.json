@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "9010047108",
+    "project_id": "verdant-af3e4",
+    "storage_bucket": "verdant-af3e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9010047108:android:94a1d0d4d59f86e45a7ad1",
+        "android_client_info": {
+          "package_name": "com.example.verdant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9010047108-794gbklefn7nba1tj6nm5gn4ncmt9jss.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKpcbzxEGDJ_shf0x3QUuRmJZv82KWW74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9010047108-794gbklefn7nba1tj6nm5gn4ncmt9jss.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
