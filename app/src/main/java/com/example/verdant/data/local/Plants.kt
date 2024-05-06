@@ -14,7 +14,7 @@ object Plants {
                 category = "Medicinal",
                 description = R.string.decription_0,
                 use = R.string.use_0,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.angelica_1
             ),
 
             Plant(
@@ -23,7 +23,7 @@ object Plants {
                 category = "Medicinal",
                 description = R.string.decription_1,
                 use = R.string.use_1,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.arnica_3
             ),
 
             Plant(
@@ -32,7 +32,7 @@ object Plants {
                 category = "Medicinal",
                 description = R.string.decription_2,
                 use = R.string.use_2,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.busuioc_7
             ),
 
             Plant(
@@ -41,7 +41,7 @@ object Plants {
                 category = "Medicinal",
                 description = R.string.decription_3,
                 use = R.string.use_3,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.cimbru_13
             ),
 
             Plant(
@@ -50,7 +50,7 @@ object Plants {
                 category = "Medicinal",
                 description = R.string.decription_0,
                 use = R.string.use_0,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.cires_14
             ),
 
             Plant(
@@ -59,7 +59,7 @@ object Plants {
                 category = "Medicinal",
                 description = R.string.decription_5,
                 use = R.string.use_5,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.coada_calului_5
             ),
 
             Plant(
@@ -68,7 +68,7 @@ object Plants {
                 category = "Medicinal",
                 description = R.string.decription_6,
                 use = R.string.use_6,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.chimion_2
             ),
 
             Plant(
@@ -77,7 +77,7 @@ object Plants {
                 category = "Medicinal",
                 description = R.string.decription_7,
                 use = R.string.use_7,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.dafin_9
             ),
 
             Plant(
@@ -86,7 +86,7 @@ object Plants {
                 category = "Medicinal",
                 description = R.string.decription_8,
                 use = R.string.use_8,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.dud_3
             ),
 
             Plant(
@@ -95,7 +95,7 @@ object Plants {
                 category = "Medicinal",
                 description = R.string.decription_9,
                 use = R.string.use_9,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.echinaceea_3
             ),
             Plant(
                 id = 10,
@@ -103,7 +103,7 @@ object Plants {
                 category = "Medicinal",
                 description = R.string.decription_10,
                 use = R.string.use_10,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.floare_soc_2
             ),
 
             Plant(
@@ -268,11 +268,9 @@ object Plants {
                 photo = R.drawable.leaf_vector
             ),
 
-
-
             Plant(
                 id = 29,
-                name = "Cumin",
+                name = "Coada Șoricelului",
                 category = "Medicinal",
                 description = R.string.decription_0,
                 use = R.string.use_0,

@@ -48,7 +48,9 @@ fun PlantCard(dataItem: Plant, modifier: Modifier = Modifier) {
             .shadow(
                 shape = RoundedCornerShape(dimensionResource(id = R.dimen.list_item_inner_padding)), // Use rounded corners
                 elevation = 5.dp,
-                ambientColor = Color(0x33000000))
+                ambientColor = Color(0x33000000)
+            )
+            //.padding(top = 3.dp)
         ,
         elevation = CardDefaults.cardElevation(2.dp),
         shape = RoundedCornerShape(dimensionResource(id = R.dimen.list_item_inner_padding)),
@@ -65,11 +67,11 @@ fun PlantCard(dataItem: Plant, modifier: Modifier = Modifier) {
                 painter = rememberAsyncImagePainter(dataItem.photo),
                 contentDescription = dataItem.name,
                 alignment = Alignment.Center,
-                contentScale = ContentScale.FillBounds,
+                contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxSize()
-                    .size(dimensionResource(id = R.dimen.card_width))
-                    .weight(0.4f)
+                    //.size(dimensionResource(id = R.dimen.card_width))
+                    .weight(0.5f)
             )
 
                 Text(
@@ -102,7 +104,13 @@ fun PlantList(
             .fillMaxSize()
     ) {
         items(items = plant, key = { plant -> plant.id }) { plant ->
-            PlantCard(dataItem = plant)
+            if(plant.id == 0 ){
+                PlantCard(dataItem = plant, modifier = Modifier.padding(top = dimensionResource(id = R.dimen.list_item_vertical_spacing)))
+            }
+            else{
+                PlantCard(dataItem = plant)
+
+            }
         }
     }
 }
