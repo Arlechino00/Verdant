@@ -63,7 +63,7 @@ fun PlantCard(dataItem: Plant, modifier: Modifier = Modifier) {
         ) {
             Image(
                 painter = rememberAsyncImagePainter(dataItem.photo),
-                contentDescription = dataItem.name ?: "Error",
+                contentDescription = dataItem.name,
                 alignment = Alignment.Center,
                 contentScale = ContentScale.FillBounds,
                 modifier = Modifier
@@ -73,7 +73,7 @@ fun PlantCard(dataItem: Plant, modifier: Modifier = Modifier) {
             )
 
                 Text(
-                    text = dataItem.name ?: "Error",
+                    text = dataItem.name,
                     style = MaterialTheme.typography.titleLarge,
                     color = MaterialTheme.colorScheme.primary,
                     fontWeight = FontWeight.W500,
