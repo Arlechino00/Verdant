@@ -1,5 +1,6 @@
 package com.example.verdant.ui.discover
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -11,12 +12,15 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
@@ -28,17 +32,17 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberAsyncImagePainter
 import com.example.verdant.R
-import com.example.verdant.api.discovery.model.PlantItem
+import com.example.verdant.data.Plant
 
 @Composable
 fun Discover() {
-
-    //Text(text = "Plant List")
-    PlantList()
+    val viewModel: PlantViewModel = viewModel()
+    val uiState by viewModel.uiState.collectAsState()
+    PlantList(plant = uiState.plantList, onClick = { /*TODO*/ })
 }
 
 @Composable
-fun PlantCard(dataItem: PlantItem, modifier: Modifier = Modifier) {
+fun PlantCard(dataItem: Plant, modifier: Modifier = Modifier) {
     Card(
         modifier = modifier
             .shadow(
@@ -58,8 +62,8 @@ fun PlantCard(dataItem: PlantItem, modifier: Modifier = Modifier) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
-                painter = rememberAsyncImagePainter(dataItem.defaultImage?.mediumUrl),
-                contentDescription = dataItem.commonName ?: "Error",
+                painter = rememberAsyncImagePainter(dataItem.photo),
+                contentDescription = dataItem.name ?: "Error",
                 alignment = Alignment.Center,
                 contentScale = ContentScale.FillBounds,
                 modifier = Modifier
@@ -69,7 +73,7 @@ fun PlantCard(dataItem: PlantItem, modifier: Modifier = Modifier) {
             )
 
                 Text(
-                    text = dataItem.commonName ?: "Error",
+                    text = dataItem.name ?: "Error",
                     style = MaterialTheme.typography.titleLarge,
                     color = MaterialTheme.colorScheme.primary,
                     fontWeight = FontWeight.W500,
@@ -84,29 +88,21 @@ fun PlantCard(dataItem: PlantItem, modifier: Modifier = Modifier) {
     }
 }
 
-@Composable
-fun PlantItemPhoto(dataItem: PlantItem, modifier: Modifier = Modifier) {
-    Box(modifier = modifier) {
-
-    }
-}
 
 @Composable
-fun PlantList() {
+fun PlantList(
+    plant: List<Plant>,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
     val viewModel: PlantViewModel = viewModel()
-    val pl = viewModel.plantsData
     LazyColumn(
-        verticalArrangement = Arrangement.spacedBy(10.dp),
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.detail_card_list_padding_top)),
         modifier = Modifier
             .fillMaxSize()
     ) {
-        items(count = pl.value.size) {
-            if(it !=0)
-                PlantCard(pl.value[it], modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.detail_card_outer_padding_horizontal)))
-            else             PlantCard(pl.value[it], modifier = Modifier.padding(top = dimensionResource(id = R.dimen.card_space)))
-
-
+        items(items = plant, key = { plant -> plant.id }) { plant ->
+            PlantCard(dataItem = plant)
         }
-
     }
 }

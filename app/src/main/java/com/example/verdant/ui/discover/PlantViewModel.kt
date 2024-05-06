@@ -1,58 +1,46 @@
 package com.example.verdant.ui.discover
 
-import android.util.Log
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
+
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.example.verdant.api.discovery.model.Plant
-import com.example.verdant.api.discovery.model.PlantItem
-import com.example.verdant.api.discovery.network.RetrofitInstance
+import com.example.verdant.data.Plant
+import com.example.verdant.data.local.Plants
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import kotlinx.coroutines.flow.update
+
+data class ListUiState(
+    val plantList: List<Plant> = emptyList(),
+    val currentPlant: Plant = Plants.defaultPlant,
+    val isShowingListPage: Boolean = true
+)
 
 class PlantViewModel: ViewModel() {
-    private val _plantsData : MutableStateFlow<List<PlantItem>> = MutableStateFlow(listOf())
-    val plantsData : StateFlow<List<PlantItem>> = _plantsData
+    private val _uiState = MutableStateFlow(
+        ListUiState(
+            plantList = Plants.getPlants(),
+            currentPlant = Plants.getPlants().getOrElse(0){
+                Plants.defaultPlant
+            }
+        )
+    )
 
-    var loading: Boolean by mutableStateOf(false)
+    val uiState: StateFlow<ListUiState> = _uiState
 
-    init {
-        retrievePlantsData()
+    fun updateCurrentPlant(selectedPlant: Plant){
+        _uiState.update {
+            it.copy(currentPlant= selectedPlant)
+        }
     }
 
-    private fun retrievePlantsData(){
-        viewModelScope.launch {
-            loading = true
-            val call : Call<Plant> = RetrofitInstance.apiService.getAllPlants()
-            call.enqueue(object : Callback<Plant> {
-                override fun onResponse(
-                    call: Call<Plant>,
-                    response: Response<Plant>
-                ) {
-                    if(response.isSuccessful){
-                        val responseData: List<PlantItem>? = response.body()?.data
-                        if(responseData != null){
-                            _plantsData.value = responseData
-                        }
-                        loading = false
-                    } else{
-                        loading = false
-                    }
-                }
+    fun navigateToListPage(){
+        _uiState.update {
+            it.copy(isShowingListPage = true)
+        }
+    }
 
-                override fun onFailure(call: Call<Plant>, t: Throwable) {
-                    loading = false
-                    Log.d("Failed Retrieve", "Network Error")
-                }
-
-            })
+    fun navigateToDetailPage(){
+        _uiState.update {
+            it.copy(isShowingListPage = false)
         }
     }
 }

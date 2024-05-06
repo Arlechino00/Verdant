@@ -10,4 +10,236 @@
     <string name="welcome_back">Welcome Back</string>
     <string name="empty"/>
     <string name="logout">Logout</string>
+
+    //Plants
+    <string name="decription_0">
+        Este o planta originara din Europa, care creste spontan in climate umede si calde. Angelica poate ajunge la 2 de metri inaltime, are frunze petiolate si flori mici pe care le putem vedea din primavara pana in toamna, crescand in special in locuri insorite. In scopuri medicinale sunt utilizate in principal radacinile uscate si macinate, tulpinile, frunzele, semintele si fructele acestei plante medicinale.
+    </string>
+    <string name="use_0">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: antifungice, digestive, antiinflamatoare, antivirale, diuretice, expectorante, analgezice, relaxante, antibacteriene, hepatoprotectoare, anti-anxietate, renale, antipiretice.
+    </string>
+
+    <string name="decription_1">
+        Este o plantă perenă originară din Europa, care crește în zonele montane și subalpine. Poate ajunge la o înălțime de 30–60 cm și are frunze ovale, cu margini zimțate, și flori galbene mari, care apar în perioada de vară. Toate părțile plantei conțin substanțe active cu proprietăți medicinale, dar florile sunt cele mai utilizate în scopuri terapeutice.    </string>
+    <string name="use_1">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: antiinflamatoare, antidiabetice, antitumorale, antibacteriene, antiseptice, cicatrizante, decongestive, decongestive.
+    </string>
+
+    <string name="decription_2">
+        Este o plantă aromatică anuală originară din Asia tropicală, aparținând familiei Lamiaceae. Are o tulpină ramificată, cu frunze ovale, verzi, cu margini zimțate și un miros caracteristic proaspăt și ușor picant. Florile mici, albe sau roz, apar în vârfurile tulpinilor în perioada de vară. Toate părțile plantei sunt comestibile, dar frunzele sunt cele mai utilizate în bucătărie și în scopuri medicinale.    </string>
+    <string name="use_2">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: digestive, antiinflamatoare, antibacteriene, antivirale, antioxidante, antispasmodice, calmante.
+    </string>
+
+    <string name="decription_3">
+        Cimbrul este o plantă aromatică perenă originară din zona mediteraneană, aparținând familiei Lamiaceae. Are o tulpină ramificată, târâtoare sau erectă, cu frunze mici, ovale, verde-cenușiu și flori mici, roz-lila sau albe, care apar în perioada de vară. Toate părțile plantei sunt aromate, dar frunzele și florile sunt cele mai utilizate în scopuri medicinale și culinare.</string>
+    <string name="use_3">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: antiseptice, expectorante, antiinflamatoare, antispastice, antioxidante, stimulatoare ale imunității, cicatrizante, digestive.
+    </string>
+
+    <string name="decription_5">
+        Coada-calului este o plantă perenă originară din Europa, Asia și America de Nord. Crește în zone umede, precum mlaștini, șanțuri și malurile râurilor, și poate fi identificată cu ușurință datorită tulpinilor sale verzi, neramificate, care se termină într-un con rotund.</string>
+    <string name="use_5">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: diuretice, antiinflamatoare, hemostatice, cicatrizante, fortifiante.
+    </string>
+
+    <string name="decription_6">
+        Chimionul este o plantă anuală care poate ajunge la o înălțime de 30-50 cm. Are o tulpină subțire, ramificată, frunze delicate, filiforme, și flori mici, albe sau roz-pal, care apar în perioada de vară. Fructele sunt diachenii (două fructe uscate unite) de culoare galben-maronie, care conțin semințele propriu-zise - spicele de chimion.
+    </string>
+    <string name="use_6">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: digestive, carminative, antiinflamatoare, antioxidante, antibacteriene, antispastice. Poate fi benefic în controlul diabetului, reglarea colesterolului, afecțiuni respiratorii, pentru susținerea sistemului imunitar și în stimularea poftei de mâncare.
+    </string>
+
+    <string name="decription_7">
+        Dafinul este un arbore aromatic sau arbust mare din familia Lauraceae, originar din zona Mediteranei. Poate ajunge până la o înălțime de 10–18 metri. Frunzele sale parfumate sunt folosite ca și condiment în bucătărie, iar în Grecia Antică, coroanele de laur erau oferite ca premiu la Jocurile Olimpice ca simbol al victoriei și al realizării.    </string>
+    <string name="use_7">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: antiinflamatoare, antibacteriene.
+    </string>
+
+    <string name="decription_8">
+        Dudul este un arbore din familia Moraceae, originar din Asia. Poate ajunge la o înălțime de 15 metri, cu o tulpină dreaptă, cenușie, ramificată de la înălțime mică, cu o coroană rară. Frunzele de dud sunt subțiri, foarte diferite ca formă (ovate sau eliptice, acute sau scurt acuminate), cu baza rotundă și cu marginea neregulat serată; sunt divizate în 3–5 lobi inegali sau nedivizate, glabre, netede, puțin lucioase pe față și scurt pubescente la nivelul nervurilor, pe dos.    </string>
+    <string name="use_8">
+        Medicina tradițională folosește diferite părți ale dudului pentru a trata o varietate de afecțiuni, printre care: diabetul, hipertensiunea arterială, colesterolul crescut, inflamația și cancerul.
+    </string>
+
+    <string name="decription_9">
+        Echinaceea este o plantă perenă originară din America de Nord, cu flori mari, colorate, care cresc în inflorescențe compacte. Există mai multe specii de echinacee, dar cea mai utilizată în scopuri medicinale este Echinacea purpurea. Florile echinaceei sunt de obicei roșii-purpurii, dar pot fi și albe, roz sau galbene.
+    </string>
+    <string name="use_9">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: antiinflamatoare, antivirale, antibacteriene, cicatrizante. Totodata, echinaceea poate ajuta la stimularea sistemului imunitar și la combaterea infecțiilor.
+    </string>
+
+    <string name="decription_10">
+        Floarea de soc este o plantă medicinală din familia Adoxaceae, originară din Europa, Asia și Africa de Nord.  Socul este un arbust sau un copac mic, cu o înălțime cuprinsă între 3 și 10 metri. Florile sale delicate, parfumate, de culoare alb-crem, cresc în ciorchini mari la începutul verii. Fructele socului sunt niște boabe mici, negru-violacee, care apar la sfârșitul verii și toamna.\n
+        Important de reținut: Toate părțile plantei de soc, cu excepția florilor, sunt considerate toxice și nu trebuie consumate. Fructele necoapte pot provoca greață, vărsături și diaree.  </string>
+    <string name="use_10">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: antiinflamatoare, antivirale, diaforetice, expectorante. Poate fi benefică pentru probleme ale pielii, alergii sezoniere și pentru stimularea sistemului imunitar.
+    </string>
+
+    <string name="decription_11">
+        Galbenelele sunt plante erbacee originare din sudul Europei și Asia de sud-vest, cultivate în prezent în toată lumea. Florile sale galbene sau portocalii viu colorate sunt folosite din cele mai vechi timpuri pentru proprietățile lor medicinale și cosmetice.
+    </string>
+    <string name="use_11">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: antiinflamatoare, antibacteriene, antifungice, cicatrizante. Galbenelele pot ajuta la ameliorarea simptomelor digestive și la stimularea sistemului imunitar.
+    </string>
+
+    <string name="decription_12">
+        Ghimbirul este o plantă tropicală din familia Zingiberaceae, originară din Asia de Sud-Est.  Rădăcina sa aromatică, cu aspect noduros, este folosită ca mirodenie și plantă medicinală de mii de ani.
+    </string>
+    <string name="use_12">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: antiinflamatoare, antidiabetice. Ghimbirul este un remediu natural eficient împotriva greței și vărsăturilor, asociate cu kinetoza (răul de mișcare), sarcină, chimioterapie sau intervenții chirurgicale.
+    </string>
+
+    <string name="decription_13">
+        Izma este o plantă erbacee perenă din familia Lamiaceae. Este una dintre cele mai populare și folosite plante medicinale din lume. Aceasta are o tulpină dreaptă, ramificată, cu frunze verzi, ovale sau eliptice, ușor zimțate pe margini.
+    </string>
+    <string name="use_13">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: antifermentative, anticancerigene, antiinflamatoare, astringente, antiseptice, analgezice, cicatrizante, dezinfectante, spasmolitice, sedative, decongestionante.
+    </string>
+
+    <string name="decription_14">
+        Lavanda face parte din familia Lamiaceae și a fost utilizată încă din cele mai vechi timpuri. Aceasta este folosită pentru gătit, în medicina naturistă pentru diverse ceaiuri, uleiuri și tincturi, dar și în industria cosmetică pentru parfumuri, săpunuri și loțiuni de corp.
+    </string>
+    <string name="use_14">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele beneficii: reducerea stresului, anxietății și a insomniei, aromaterapia, proprietățile antiseptice și antiinflamatoare.
+    </string>
+
+    <string name="decription_15">
+        Limba mielului este o plantă erbacee perenă originară din regiunile temperate ale Europei, Asiei și Americii de Nord. Are frunze lanceolate, lungi, înguste, cu margini zimțate și nervuri proeminente. Frunzele sunt de culoare verde închis pe partea superioară și verde mai deschis pe partea inferioară și florile mici, verzi-gălbui, cresc în spici dense la vârful tulpinilor.
+    </string>
+    <string name="use_15">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: antiinflamatoare, antidiabetice, antitumorale, antitumorale, antibacteriene, antiseptice, cicatrizante, decongestive, decongestive.
+    </string>
+
+    <string name="decription_16">
+        Mărarul este o specie de plante din familia Apiaceae, originară din sud-vestul și centrul Asiei. Este o plantă anuală, cu viață scurtă, de culoare verde și poate crește până la un metru înălțime.
+    </string>
+    <string name="use_16">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: antiinflamatoare, digestive, cardiovasculare. Mărarul este eficient și împotriva greței și vărsăturilor, asociate cu kinetoza (răul de mișcare), sarcină, chimioterapie sau intervenții chirurgicale. Mesteacănul este recunoscut în special pentru scoarța sa albă caracteristică, exfoliantă, care se dezlipește în foi subțiri, hârtie.
+    </string>
+
+    <string name="decription_17">
+        Mesteacănul (Betula) este un gen de arbori sau arbuști din familia Betulaceae, originar din zonele temperate și subarctice ale emisferei nordice. Există aproximativ 40 de specii de mesteacăn, răspândite în Europa, Asia și America de Nord.
+    </string>
+    <string name="use_17">
+        Scoarța de mesteacăn are proprietăți antiseptice și cicatrizante și a fost folosită din vechime în medicina tradițională.
+    </string>
+
+
+    <string name="decription_18">
+        Mușețelul este o plantă ce aparține familiei Asteraceae și poate fi găsită în toată lumea. Florile sale seamănă cu cele ale margaretei, având petale albe și un centru galben. Poate atinge înălțimi de 20 - 60 de centimetri.
+    </string>
+    <string name="use_18">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: antiinflamatoare, calmante, antispastice, antiseptice, cicatrizante. Unele dintre cele mai comune utilizări ale mușețelului includ: probleme digestive, ameliorarea durerilor, afecțiuni ale pielii, anxietate și insomnie și sănătate bucală.
+    </string>
+
+
+    <string name="decription_19">
+        Năpraznicul sau este o planta anuala sau bienala, originara din Asia si Europa Centrala si Meridionala, cu tulpina rosiatica, ramificata, flori mici, delicate, roz sau violacee, si frunze de un verde deschis, uneori cu o margini rosiatice. Inaltimea sa poate varia intre 10 si 60 cm si, dupa cum mentionam anterior, prefera zonele umede si umbroase. Una dintre cele mai cunoscute caracteristici ale sale este insa mirosul destul de neplacut, intepator.
+    </string>
+    <string name="use_19">
+        Năpraznicul are o lungă istorie de utilizare în medicina populară pentru a trata o varietate de afecțiuni, printre care: afecțiuni digestive, sănătate cardiovasculară, probleme respiratorii, afecțiuni ale pielii, cancer.
+    </string>
+
+
+    <string name="decription_20">
+        Pătlagina este o plantă medicinală erbacee perenă originară din zonele temperate ale Europei, Asiei și Americii de Nord, de 10 – 50 cm înălțime, cu frunze ovate sau lanceolate, cu tulpini florifere drepte, cu inflorescențe terminale în formă de spic și cu floricele gălbui, mici.
+    </string>
+    <string name="use_20">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: antiinflamatoare, antibacteriene, cicatrizante, emoliente, expectorante. Unele dintre cele mai comune utilizări ale pătlaginei includ: probleme respiratorii, afecțiuni ale pielii, probleme digestive, sănătate orală.
+    </string>
+
+    <string name="decription_21">
+        Salvia este o planta aromatica perena ce poate atinge o inaltime de 30-70 centimetri. Are frunze pufoase si flori in nuante de albastru, violet sau alb. Este originara din sudul Europei si din regiunile mediteraneene, dar este cultivata pe scara larga in intreaga lume, pentru utilizarea sa in gastronomie, medicina si parfumerie.
+    </string>
+    <string name="use_21">
+        Unele specii de salvie au proprietăți antiinflamatoare, antibacteriene și antiseptice. Frunzele uscate pot fi consumate sub formă de ceai pentru ameliorarea durerilor de gât, problemelor digestive sau glicemiei crescute.
+    </string>
+
+
+    <string name="decription_22">
+        Socul negru este o specie de plante din grupa arbuștilor cu 20-30 de soiuri din familia Adoxaceae, nativă Europei, nord-vestului Africii și sud-vestului Asiei.
+    </string>
+    <string name="use_22">
+        Extracte de scoarță, frunze, flori, fructe și rădăcini sunt utilizate pentru tratarea bronșitei, tusei, infecțiilor sistemului respirator superior, febrei. \n
+        Important de știut: Fructele crude și necoapte ale soc negru sunt toxice și pot provoca greață, vărsături și diaree.
+    </string>
+
+
+    <string name="decription_23">
+        Sunătoarea este o plantă medicinală erbacee, perenă, originară din Europa, vestul Asiei și nordul Africii. Este recunoscută pentru florile sale galbene aurii cu puncte negre și pentru proprietățile sale antidepresive.
+    </string>
+    <string name="use_23">
+        Sunătoarea este cel mai studiat remediu natural pentru depresie și anxietate ușoară până la moderată. Totodata, sunătoarea a fost folosită în mod tradițional pentru o varietate de afecțiuni, inclusiv arsuri solare, răni, insomnie și probleme digestive.
+    </string>
+
+
+    <string name="decription_24">
+        Talpa gâștei este o plantă medicinală folosită de secole pentru proprietățile sale benefice asupra inimii. Are frunze palmat lobate, cu peri rigizi și flori roz grupate în 10-20 ciorchini. Crește pe marginea drumurilor rurale, la marginea pădurilor, în poieni, atât în zona de câmpie cât și de deal, până la 500-600 m altitudine.
+    </string>
+    <string name="use_24">
+        Talpa gâștei poate ajuta la reglarea ritmului cardiac, reducerea tensiunii arteriale și ameliorarea simptomelor insuficienței cardiace congestive ușoare până la moderate. De asemenea, proprietățile calmante ale talpei gâștei pot ajuta la reducerea anxietății și stresului.
+    </string>
+
+
+    <string name="decription_25">
+        Teiul este un gen de arbori sau arbuști din familia Tiliaceae, originar din zonele temperate și subarctice ale emisferei nordice. Există aproximativ 40 de specii de tei, răspândite în Europa, Asia și America de Nord. Este recunoscut în special pentru scoarța sa albă caracteristică, exfoliantă, care se dezlipește în foi subțiri, frunzele teiului fiind alterne, simple, ovale sau rombice, cu margini zimțate.
+    </string>
+    <string name="use_25">
+        Teiul este cunoscut pentru proprietățile sale medicinale relaxante și calmante, fiind utilizat în mod tradițional de secole pentru tratarea diferitelor afecțiuni, cum ar fi: problemele digestive, răcelile și gripele, tensiunea arterială și migrenele.
+    </string>
+
+
+    <string name="decription_26">
+        Fraga tătărească este o plantă erbacee anuală din familia Amaranthaceae, cu frunze dințate și flori roșii comestibile, asemănătoare fragilor. Este o plantă rară, care se întâlnește în special în regiunile cu climat cald și sol calcaros, de aceea este mai degrabă familiară florei din sudul Europei și nord-vestul Africii.
+    </string>
+    <string name="use_26">
+        În medicina populară, fragă tătărească a fost folosită pentru tratarea unei varietăți de afecțiuni, precum: afecțiuni digestive, sănătate cardiovasculară, probleme respiratorii, afecțiuni ale pielii.
+    </string>
+
+
+    <string name="decription_27">
+         Urzica este o plantă perenă erbacee, dioică, originară din Europa, Asia și Africa de Nord. poate ajunge la o înălțime de 0,9 până la 2 metri. Are frunze verzi, moi, cu margini puternic zimțate și peri urticatori, iar florile sunt mici, verzi sau maronii.
+    </string>
+    <string name="use_27">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: antiinflamatoare, antihistaminică, diuretică, astringentă, nutritivă.
+    </string>
+
+
+    <string name="decription_28">
+        Valeriana este o plantă perenă originară din Europa și Asia, întâlnită frecvent și în anumite zone ale Americii de Nord. Are frunze dese si flori mici, albe sau roz, iar inaltimea sa ajunge sa depaseasca uneori 1 metru si jumatate.
+    </string>
+    <string name="use_28">
+        Valeriana este cunoscută de secole pentru proprietățile sale calmante și relaxante, fiind utilizată în mod tradițional pentru tratarea diferitelor afecțiuni, precum insomnie si anxietate.
+    </string>
+
+    <string name="decription_29">
+
+    </string>
+    <string name="use_29">
+
+    </string>
+
+    <string name="decription_30">
+
+    </string>
+    <string name="use_30">
+
+    </string>
+
+    <string name="decription_31">
+
+    </string>
+    <string name="use_31">
+
+    </string>
+
+    <string name="decription_32">
+
+    </string>
+    <string name="use_32">
+
+    </string>
+
+
 </resources>
