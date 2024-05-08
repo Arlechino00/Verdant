@@ -71,7 +71,7 @@ fun PlantCard(dataItem: Plant, modifier: Modifier = Modifier) {
                 modifier = Modifier
                     .fillMaxSize()
                     //.size(dimensionResource(id = R.dimen.card_width))
-                    .weight(0.5f)
+                    .weight(0.6f)
             )
 
                 Text(
@@ -102,6 +102,7 @@ fun PlantList(
         verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.detail_card_list_padding_top)),
         modifier = Modifier
             .fillMaxSize()
+            .padding(horizontal = dimensionResource(id = R.dimen.list_item_horizontal_spacing))
     ) {
         items(items = plant, key = { plant -> plant.id }) { plant ->
             if(plant.id == 0){

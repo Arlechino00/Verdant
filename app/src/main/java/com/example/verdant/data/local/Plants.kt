@@ -126,7 +126,7 @@ object Plants {
                 medicinal =  R.string.use_22,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.floare_soc_1
             ),
 
             Plant(
@@ -137,7 +137,7 @@ object Plants {
                 medicinal = R.string.use_11,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.galbenele_6
             ),
 
             Plant(
@@ -148,7 +148,7 @@ object Plants {
                 medicinal = R.string.use_12,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.ghimbir_14
             ),
 
             Plant(
@@ -159,7 +159,7 @@ object Plants {
                 medicinal = R.string.use_13,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.izma_9
             ),
 
             Plant(
@@ -170,7 +170,7 @@ object Plants {
                 medicinal = R.string.use_14,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.lavanda_4
             ),
 
             Plant(
@@ -181,7 +181,7 @@ object Plants {
                 medicinal = R.string.use_15,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.limba_mielului_2
             ),
 
             Plant(
@@ -192,7 +192,7 @@ object Plants {
                 medicinal = R.string.use_16,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.marar_1
             ),
 
             Plant(
@@ -203,7 +203,7 @@ object Plants {
                 medicinal = R.string.use_17,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.mesteacan_1
             ),
 
             Plant(
@@ -214,7 +214,7 @@ object Plants {
                 medicinal = R.string.use_18,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.musetel_1
             ),
 
             Plant(
@@ -225,7 +225,7 @@ object Plants {
                 medicinal = R.string.use_19,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.napraznic_1
             ),
 
             Plant(
@@ -236,7 +236,7 @@ object Plants {
                 medicinal = R.string.use_20,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.patlagina_1
             ),
 
             Plant(
@@ -247,7 +247,7 @@ object Plants {
                 medicinal = R.string.use_21,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.salvie_1
             ),
 
 
@@ -260,7 +260,7 @@ object Plants {
                 medicinal = R.string.use_23,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.sunatoare_1
             ),
 
             Plant(
@@ -271,7 +271,7 @@ object Plants {
                 medicinal = R.string.use_24,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.talpa_gastei_2
             ),
 
             Plant(
@@ -282,7 +282,7 @@ object Plants {
                 medicinal = R.string.use_25,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.tei_13
             ),
 
             Plant(
@@ -293,7 +293,7 @@ object Plants {
                 medicinal = R.string.use_26,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.fraga_7
             ),
 
             Plant(
@@ -304,7 +304,7 @@ object Plants {
                 medicinal = R.string.use_27,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.urzica_3
             ),
 
             Plant(
@@ -315,7 +315,7 @@ object Plants {
                 medicinal = R.string.use_28,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.valeriana_2
             ),
 
             Plant(
@@ -326,7 +326,7 @@ object Plants {
                 medicinal = R.string.use_0,
                 poisonous = null,
                 warning = null,
-                photo = R.drawable.leaf_vector
+                photo = R.drawable.coada_soricelului_1
             ),
 
 
@@ -338,7 +338,7 @@ object Plants {
                 poisonous = R.string.uses_29,
                 description = R.string.description_29,
                 warning = R.string.warning_29,
-                photo = R.drawable.leaves_png_isolated_file
+                photo = R.drawable.lacramioara_2
             ),
 
             Plant(
@@ -349,7 +349,7 @@ object Plants {
                 poisonous = R.string.uses_30,
                 description = R.string.description_30,
                 warning = R.string.warning_30,
-                photo = R.drawable.leaves_png_isolated_file
+                photo = R.drawable.omag_0
             ),
 
             Plant(
@@ -360,7 +360,7 @@ object Plants {
                 poisonous = R.string.uses_31,
                 description = R.string.description_31,
                 warning = R.string.warning_31,
-                photo = R.drawable.leaves_png_isolated_file
+                photo = R.drawable.cucuta
             ),
 
             Plant(
@@ -371,7 +371,7 @@ object Plants {
                 poisonous = R.string.uses_32,
                 description = R.string.description_32,
                 warning = R.string.warning_32,
-                photo = R.drawable.leaves_png_isolated_file
+                photo = R.drawable.leandru
             ),
 
             Plant(
@@ -382,7 +382,7 @@ object Plants {
                 poisonous = R.string.uses_33,
                 description = R.string.description_33,
                 warning = R.string.warning_33,
-                photo = R.drawable.leaves_png_isolated_file
+                photo = R.drawable.ricin_1
             ),
 
             Plant(
@@ -393,7 +393,7 @@ object Plants {
                 poisonous = R.string.uses_34,
                 description = R.string.description_34,
                 warning = R.string.warning_34,
-                photo = R.drawable.leaves_png_isolated_file
+                photo = R.drawable.matraguna_3
             ),
 
             Plant(
@@ -404,7 +404,7 @@ object Plants {
                 poisonous = R.string.uses_35,
                 description = R.string.description_35,
                 warning = R.string.warning_35,
-                photo = R.drawable.leaves_png_isolated_file
+                photo = R.drawable.joian_3
             )
         )
     }
