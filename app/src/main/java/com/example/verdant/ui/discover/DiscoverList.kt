@@ -104,12 +104,15 @@ fun PlantList(
             .fillMaxSize()
     ) {
         items(items = plant, key = { plant -> plant.id }) { plant ->
-            if(plant.id == 0 ){
+            if(plant.id == 0){
                 PlantCard(dataItem = plant, modifier = Modifier.padding(top = dimensionResource(id = R.dimen.list_item_vertical_spacing)))
             }
+            else if(plant.id == 35){
+                PlantCard(dataItem = plant, modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.list_item_vertical_spacing)))
+            }
+            
             else{
                 PlantCard(dataItem = plant)
-
             }
         }
     }

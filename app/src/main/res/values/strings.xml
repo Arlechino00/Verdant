@@ -37,6 +37,17 @@
         Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: antiseptice, expectorante, antiinflamatoare, antispastice, antioxidante, stimulatoare ale imunității, cicatrizante, digestive.
     </string>
 
+    <string name="description_4">
+        Cireșul este un arbore din familia Rosaceae, originar din Asia de Vest și Europa. Poate ajunge la o înălțime de 15-20 de metri și are o coroană deasă, rotunjită. Frunzele sunt ovale, cu margini zimțate, iar florile albe, delicate, apar primăvara devreme, odată cu înflorirea pomilor. Fructele sunt drupe rotunde, cărnoase, dulci-acrișoare, de culoare roșie sau neagră la maturitate.
+    </string>
+    <string name="use_4">
+        Printre calitatile terapeutice ale acestei plante medicinale se numara urmatoarele proprietati: diuretice, laxative, antiinflamatoare, antioxidante, astringente. Poate fi benefica în afecțiuni ale pielii, insomnie, boli respiratorii și pentru îmbunătățirea circulației sângelui.
+    </string>
+    <string name="warning_4">
+        Sâmburii de cireșe conțin amigdalină, o substanță care poate fi transformată în acid prusic (cianură) în organism. Consumul în cantități mari de sâmburi poate fi toxic.
+    </string>
+
+
     <string name="decription_5">
         Coada-calului este o plantă perenă originară din Europa, Asia și America de Nord. Crește în zone umede, precum mlaștini, șanțuri și malurile râurilor, și poate fi identificată cu ușurință datorită tulpinilor sale verzi, neramificate, care se termină într-un con rotund.</string>
     <string name="use_5">
@@ -163,8 +174,11 @@
     </string>
     <string name="use_22">
         Extracte de scoarță, frunze, flori, fructe și rădăcini sunt utilizate pentru tratarea bronșitei, tusei, infecțiilor sistemului respirator superior, febrei. \n
-        Important de știut: Fructele crude și necoapte ale soc negru sunt toxice și pot provoca greață, vărsături și diaree.
     </string>
+    <string name="warning_22">
+        Fructele crude și necoapte ale soc negru sunt toxice și pot provoca greață, vărsături și diaree. Doar fructele coapte complet pot fi consumate în siguranță, de obicei gătite sub formă de siropuri, gemuri sau vin. Toate celelalte părți ale plantei, cu excepția florilor, pot fi toxice în stare crudă.
+    </string>
+
 
 
     <string name="decription_23">
@@ -221,24 +235,108 @@
         Coada șoricelului reprezintă un remediu natural pentru tratarea enterocolitelor, gastritelor, colicilor gastrice. Este antiseptic, tonic aperitiv, coleretic-colagog, stimulează funcția hepatică, este antispastic, antiinflamator, astringent
     </string>
 
-    <string name="decription_30">
+
+    <string name="description_29">
+        Lacramioara, cunoscută și sub denumirea de Convallaria majalis, este o plantă perenă originară din Europa și Asia. Are frunze verzi, lanceolate, și flori mici, albe sau roz, în formă de clopot.
+    </string>
+    <string name="uses_29">
+        Ingestia oricărei părți a plantei, inclusiv a florilor, frunzelor și rizomilor, poate provoca: greață și vărsături, diaree, dureri abdominale, dureri de cap, amețeli, tulburări de ritm cardiac, in cazuri severe, poate duce la moarte.
+    </string>
+    <string name="warning_29">
+        Evitați cu strictețe ingerarea oricărei părți a plantei lacramioară, indiferent dacă este proaspătă sau uscată.
+        \nNu puneți lacramioara în vaze cu alte flori, deoarece substanțele toxice pot fi transferate prin apă.
+        \nPăstrați lacramioarele departe de copii și animale de companie.
+    </string>
+
+
+    <string name="description_30">
+        Omagul, cunoscut și sub numele de Aconitum napellus, este o plantă perenă originară din zonele montane ale Europe și Asiei. Are frunze palmate, verde închis, și flori albastre sau violet, în formă de coif, care înfloresc vara.
+    </string>
+    <string name="uses_30">
+        Toate părțile omagului conțin alcaloizi toxici, în special aconitina, o substanță neurotoxică puternică. Ingestia oricărei părți a plantei poate duce la otrăvire severă, chiar și mortală. Simptomele otrăvirii cu omagul pot apărea rapid, în decurs de minute până la ore, și includ:
+        furnicături și amorțeală la nivelul gurii și extremităților, greață, vărsături și diaree, dureri abdominale severe, slăbiciune musculară și paralizie, probleme respiratorii, inclusiv insuficiență respiratorie, tulburări ale ritmului cardiac, care pot duce la stop cardiac si chiar moarte.
+    </string>
+    <string name="warning_30">
+        Evitați cu strictețe atingerea sau ingerarea oricărei părți a plantei. Toate părțile plantei sunt extrem de toxice.
+        \nFiți deosebit de atenți în zonele unde crește omagul, mai ales dacă aveți copii sau animale de companie.
+    </string>
+
+
+    <string name="description_31">
+        Cucuta, cunoscută și sub denumirea științifică Conium maculatum, este o plantă erbacee bienală din familia Apiaceae (umbellifere). Este originară din Europa, Nordul Africii și Asia temperată, dar a fost introdusă accidental și în alte zone ale lumii.
+         \nAre o înălțime cuprinsă între 1-2 metri. Are o tulpină erectă, striată, ramificată, cu frunze mari, verde închis, lobate și cu margini dintate. Florile mici, albe, sunt grupate în inflorescențe de tip umbelă, iar fructul este ovoidal, brun-verzui.
+    </string>
+    <string name="uses_31">
+        Cucuta conține alcaloizi toxici, în special conina, un neurotoxin puternic. Toate părțile plantei sunt otrăvitoare, însă frunzele și semințele au cea mai mare concentrație de toxine. Ingestia oricărei părți a plantei poate duce la otrăvire severă, chiar și mortală. Simptomele otrăvirii cu cucuta pot apărea în decurs de 30 de minute până la câteva ore și includ:
+        slăbiciune musculară progresivă, furnicături și amorțeală la nivelul membrelor și gurii, dificultăți de respirație, inclusiv paralizie a mușchilor diafragmei, probleme de vedere, inclusiv dilatarea pupilelor, convulsii, insuficiență respiratorie și moarte în cazuri severe.
+    </string>
+    <string name="warning_31">
+        Evitați cu strictețe atingerea sau ingerarea oricărei părți a plantei. Toate părțile plantei sunt extrem de toxice.
+        \nFiți deosebit de atenți în zonele unde crește, mai ales dacă aveți copii sau animale de companie.
 
     </string>
-    <string name="use_30">
+
+
+    <string name="description_32">
+        Leandrul este un arbust decorativ popular, originar din zonele mediteraneene. Are frunze verzi, lucioase, lanceolate, dispuse pereche pe tulpină. Florile mari și spectaculoase, în formă de trompetă, pot fi albe, roz, galbene sau roșii, în funcție de varietate.
+    </string>
+    <string name="uses_32">
+        Leandrul conține substanțe chimice toxice numite glicozide cardiace, în special oleandrina și neriantina. Aceste substanțe pot afecta grav inima dacă sunt ingerate. Simptomele otrăvirii cu leandru pot apărea în decurs de minute până la ore și includ:
+        greață, vărsături și diaree, dureri abdominale severe, salivație excesivă, slăbiciune musculară, amețeli și confuzie, convulsii și pierderea cunoștinței (în cazuri severe).
 
     </string>
-
-    <string name="decription_31">
-
-    </string>
-    <string name="use_31">
-
+    <string name="warning_32">
+        Evitați cu strictețe ingerarea oricărei părți a plantei. Toate părțile sunt toxice, inclusiv frunzele, florile, tulpinile și semințele.
+        \NPurtați mănuși atunci când tăiați sau manipulați leandrul pentru a evita contactul cu sucul plantei. Spălați bine mâinile după manipulare.
     </string>
 
-    <string name="decription_32">
+
+    <string name="description_33">
+        Ricinul este o plantă perenă originară din Africa, dar cultivată în multe zone ale lumii cu climat cald. Este ușor de recunoscut datorită frunzelor sale palmate, lobate, de culoare verde-închis, asemănătoare cu cele ale labei-gâștei, și a capsulelor spinoase care conțin semințe lucioase.
+    </string>
+    <string name="uses_33">
+        Semințele de ricin conțin o toxină puternică numită ricină. Ingestia chiar și a câtorva semințe poate duce la otrăvire severă, chiar și mortală. Simptomele otrăvirii cu ricină pot apărea în decurs de câteva ore și includ:
+        greață, vărsături severe și diaree cu sânge, dureri abdominale severe, deshidratare severă, sângerări interne, probleme respiratorii și insuficiență renală, moartea
+    </string>
+    <string name="warning_33">
+        Evitați cu strictețe ingerarea semințelor de ricin. Acestea sunt extrem de toxice și pot fi fatale.
+        \nFiți atenți atunci când manipulați semințele. Spălați-vă bine mâinile după contact.
+    </string>
+
+
+    <string name="description_34">
+        Mătrăguna, cunoscută și sub denumirea științifică Atropa belladonna, este o plantă perenă erbacee originară din Europa, nordul Africii și anumite zone din Asia temperată. Ea poate ajunge la o înălțime de 1-2 metri. Are tulpini erecte, ramificate, cu frunze ovale, verde închis, și flori mov sau violet în formă de clopot. Fructul este o bacă lucioasă, neagră, atrăgătoare, dar extrem de toxică.
+    </string>
+    <string name="uses_34">
+        Toate părțile plantei de mătrăgună sunt otrăvitoare, în special frunzele, fructele și rizomul (rădăcina subterană).  Toxicitatea se datorează prezenței unor alcaloizi tropanici, în special atropinei, hiosciaminei și scopolaminei. Simptomele otrăvirii cu mătrăgună pot apărea rapid, în decurs de minute până la ore, și pot include:
+        gură uscată, vedere încețoșată și dilatarea pupilelor, dificultăți de vorbire și de înghițire, palpitații, tahicardie (ritm cardiac rapid), dezorientare, halucinații și delir, convulsii, paralizie și pierderea cunoștinței (în cazuri severe), moarte (în cazuri severe de otrăvire).
+    </string>
+    <string name="warning_34">
+        Evitați cu strictețe atingerea sau ingerarea oricărei părți a plantei. Toate părțile sunt extrem de toxice.
+        \nPurtați mănuși dacă manipulați accidental mătrăguna și spălați-vă bine mâinile ulterior.
+    </string>
+
+
+    <string name="description_35">
+        Joianul este o plantă perenă din familia Apiaceae (umbellifere) care seamănă cu țelina sau pătrunjelul.  Este originară din zonele umede din Europa, nordul Africii și vestul Asiei și poate fi întâlnită și în România, de obicei pe lângă râuri, mlaștini, pârâuri, canale sau șanțuri umede.
+    </string>
+    <string name="uses_35">
+        Înșelător prin aspectul său similar unor plante comestibile, joianul otrăvitor este extrem de toxic. Toate părțile plantei, inclusiv rădăcina, tulpina, frunzele și fructele, conțin o toxină puternică numită oenanthotoxin. Această toxină afectează sistemul nervos central și poate duce la moarte dacă este ingerată.Simptomele otrăvirii cu joianul otrăvitor pot apărea rapid, în decurs de minute până la ore, și pot include:
+        greață, vărsături și diaree severe, dureri abdominale severe, convulsii, probleme respiratorii, inclusiv paralizie a diafragmei, pierderea cunoștinței, moarte (în cazuri severe).
+    </string>
+    <string name="warning_35">
+        Evitați cu strictețe atingerea sau ingerarea oricărei părți a plantei. Toate părțile sunt extrem de toxice.
+        \nPurtați mănuși dacă manipulați accidental joianul și spălați-vă bine mâinile ulterior.
+    </string>
+
+
+    <string name="description_36">
 
     </string>
-    <string name="use_32">
+    <string name="uses_36">
+
+    </string>
+    <string name="warning_36">
 
     </string>
 

@@ -12,8 +12,10 @@ object Plants {
                 id = 0,
                 name = "Angelica",
                 category = "Medicinal",
+                poisonous = null,
                 description = R.string.decription_0,
-                use = R.string.use_0,
+                medicinal = R.string.use_0,
+                warning = null,
                 photo = R.drawable.angelica_1
             ),
 
@@ -22,7 +24,9 @@ object Plants {
                 name = "Arnica",
                 category = "Medicinal",
                 description = R.string.decription_1,
-                use = R.string.use_1,
+                medicinal = R.string.use_1,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.arnica_3
             ),
 
@@ -31,7 +35,9 @@ object Plants {
                 name = "Busuioc",
                 category = "Medicinal",
                 description = R.string.decription_2,
-                use = R.string.use_2,
+                medicinal = R.string.use_2,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.busuioc_7
             ),
 
@@ -40,7 +46,9 @@ object Plants {
                 name = "Cimbru",
                 category = "Medicinal",
                 description = R.string.decription_3,
-                use = R.string.use_3,
+                medicinal = R.string.use_3,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.cimbru_13
             ),
 
@@ -49,7 +57,9 @@ object Plants {
                 name = "Cireș",
                 category = "Medicinal",
                 description = R.string.decription_0,
-                use = R.string.use_0,
+                medicinal = R.string.use_0,
+                poisonous = null,
+                warning = R.string.warning_4,
                 photo = R.drawable.cires_14
             ),
 
@@ -58,7 +68,9 @@ object Plants {
                 name = "Coada-calului",
                 category = "Medicinal",
                 description = R.string.decription_5,
-                use = R.string.use_5,
+                medicinal = R.string.use_5,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.coada_calului_5
             ),
 
@@ -67,7 +79,9 @@ object Plants {
                 name = "Chimion",
                 category = "Medicinal",
                 description = R.string.decription_6,
-                use = R.string.use_6,
+                medicinal = R.string.use_6,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.chimion_2
             ),
 
@@ -76,7 +90,9 @@ object Plants {
                 name = "Dafin",
                 category = "Medicinal",
                 description = R.string.decription_7,
-                use = R.string.use_7,
+                medicinal = R.string.use_7,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.dafin_9
             ),
 
@@ -85,7 +101,9 @@ object Plants {
                 name = "Dud",
                 category = "Medicinal",
                 description = R.string.decription_8,
-                use = R.string.use_8,
+                medicinal = R.string.use_8,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.dud_3
             ),
 
@@ -94,16 +112,21 @@ object Plants {
                 name = "Echinaceea",
                 category = "Medicinal",
                 description = R.string.decription_9,
-                use = R.string.use_9,
+                medicinal = R.string.use_9,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.echinaceea_3
             ),
+
             Plant(
                 id = 10,
-                name = "Floarea de soc",
+                name = "Soc negru",
                 category = "Medicinal",
-                description = R.string.decription_10,
-                use = R.string.use_10,
-                photo = R.drawable.floare_soc_2
+                description = R.string.decription_22,
+                medicinal =  R.string.use_22,
+                poisonous = null,
+                warning = null,
+                photo = R.drawable.leaf_vector
             ),
 
             Plant(
@@ -111,7 +134,9 @@ object Plants {
                 name = "Galbenele",
                 category = "Medicinal",
                 description = R.string.decription_11,
-                use = R.string.use_11,
+                medicinal = R.string.use_11,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
@@ -120,7 +145,9 @@ object Plants {
                 name = "Ghimbir",
                 category = "Medicinal",
                 description = R.string.decription_12,
-                use = R.string.use_12,
+                medicinal = R.string.use_12,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
@@ -129,7 +156,9 @@ object Plants {
                 name = "Izmă",
                 category = "Medicinal",
                 description = R.string.decription_13,
-                use = R.string.use_13,
+                medicinal = R.string.use_13,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
@@ -138,7 +167,9 @@ object Plants {
                 name = "Lavanda",
                 category = "Medicinal",
                 description = R.string.decription_14,
-                use = R.string.use_14,
+                medicinal = R.string.use_14,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
@@ -147,7 +178,9 @@ object Plants {
                 name = "Limba mielului",
                 category = "Medicinal",
                 description = R.string.decription_15,
-                use = R.string.use_15,
+                medicinal = R.string.use_15,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
@@ -156,7 +189,9 @@ object Plants {
                 name = "Mărar",
                 category = "Medicinal",
                 description = R.string.decription_16,
-                use = R.string.use_16,
+                medicinal = R.string.use_16,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
@@ -165,7 +200,9 @@ object Plants {
                 name = "Mesteacăn",
                 category = "Medicinal",
                 description = R.string.decription_17,
-                use = R.string.use_17,
+                medicinal = R.string.use_17,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
@@ -174,7 +211,9 @@ object Plants {
                 name = "Mușețel",
                 category = "Medicinal",
                 description = R.string.decription_18,
-                use = R.string.use_18,
+                medicinal = R.string.use_18,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
@@ -183,7 +222,9 @@ object Plants {
                 name = "Năpraznic",
                 category = "Medicinal",
                 description = R.string.decription_19,
-                use = R.string.use_19,
+                medicinal = R.string.use_19,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
@@ -192,7 +233,9 @@ object Plants {
                 name = "Pătlagină",
                 category = "Medicinal",
                 description = R.string.decription_20,
-                use = R.string.use_20,
+                medicinal = R.string.use_20,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
@@ -201,138 +244,168 @@ object Plants {
                 name = "Salvie",
                 category = "Medicinal",
                 description = R.string.decription_21,
-                use = R.string.use_21,
+                medicinal = R.string.use_21,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
+
+
             Plant(
                 id = 22,
-                name = "Soc negru",
+                name = "Sunătoare",
                 category = "Medicinal",
-                description = R.string.decription_22,
-                use = R.string.use_22,
+                description = R.string.decription_23,
+                medicinal = R.string.use_23,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
             Plant(
                 id = 23,
-                name = "Sunătoare",
+                name = "Talpa gâștei",
                 category = "Medicinal",
-                description = R.string.decription_23,
-                use = R.string.use_23,
+                description = R.string.decription_24,
+                medicinal = R.string.use_24,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
             Plant(
                 id = 24,
-                name = "Talpa gâștei",
+                name = "Tei",
                 category = "Medicinal",
-                description = R.string.decription_24,
-                use = R.string.use_24,
+                description = R.string.decription_25,
+                medicinal = R.string.use_25,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
             Plant(
                 id = 25,
-                name = "Tei",
+                name = "Fragă Tătărească",
                 category = "Medicinal",
-                description = R.string.decription_25,
-                use = R.string.use_25,
+                description = R.string.decription_26,
+                medicinal = R.string.use_26,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
             Plant(
                 id = 26,
-                name = "Fraga tătărească",
+                name = "Urzică",
                 category = "Medicinal",
-                description = R.string.decription_26,
-                use = R.string.use_26,
+                description = R.string.decription_27,
+                medicinal = R.string.use_27,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
             Plant(
                 id = 27,
-                name = "Urzică",
+                name = "Valeriană ",
                 category = "Medicinal",
-                description = R.string.decription_27,
-                use = R.string.use_27,
+                description = R.string.decription_28,
+                medicinal = R.string.use_28,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
             ),
 
             Plant(
                 id = 28,
-                name = "Valeriană ",
-                category = "Medicinal",
-                description = R.string.decription_28,
-                use = R.string.use_28,
-                photo = R.drawable.leaf_vector
-            ),
-
-            Plant(
-                id = 29,
                 name = "Coada Șoricelului",
                 category = "Medicinal",
                 description = R.string.decription_0,
-                use = R.string.use_0,
+                medicinal = R.string.use_0,
+                poisonous = null,
+                warning = null,
                 photo = R.drawable.leaf_vector
+            ),
+
+
+            Plant(
+                id = 29,
+                name = "Lăcrămioara",
+                category = "Otrăvitoare",
+                medicinal = null,
+                poisonous = R.string.uses_29,
+                description = R.string.description_29,
+                warning = R.string.warning_29,
+                photo = R.drawable.leaves_png_isolated_file
             ),
 
             Plant(
                 id = 30,
-                name = "Cumin",
-                category = "Medicinal",
-                description = R.string.decription_0,
-                use = R.string.use_0,
-                photo = R.drawable.leaf_vector
+                name = "Omagul",
+                category = "Otrăvitoare",
+                medicinal = null,
+                poisonous = R.string.uses_30,
+                description = R.string.description_30,
+                warning = R.string.warning_30,
+                photo = R.drawable.leaves_png_isolated_file
             ),
 
             Plant(
                 id = 31,
-                name = "Cumin",
-                category = "Medicinal",
-                description = R.string.decription_0,
-                use = R.string.use_0,
-                photo = R.drawable.leaf_vector
+                name = "Cucuta",
+                category = "Otrăvitoare",
+                medicinal = null,
+                poisonous = R.string.uses_31,
+                description = R.string.description_31,
+                warning = R.string.warning_31,
+                photo = R.drawable.leaves_png_isolated_file
             ),
 
             Plant(
                 id = 32,
-                name = "Cumin",
-                category = "Medicinal",
-                description = R.string.decription_0,
-                use = R.string.use_0,
-                photo = R.drawable.leaf_vector
+                name = "Leandrul",
+                category = "Otrăvitoare",
+                medicinal = null,
+                poisonous = R.string.uses_32,
+                description = R.string.description_32,
+                warning = R.string.warning_32,
+                photo = R.drawable.leaves_png_isolated_file
             ),
 
             Plant(
                 id = 33,
-                name = "Cumin",
-                category = "Medicinal",
-                description = R.string.decription_0,
-                use = R.string.use_0,
-                photo = R.drawable.leaf_vector
+                name = "Ricinul",
+                category = "Otrăvitoare",
+                medicinal = null,
+                poisonous = R.string.uses_33,
+                description = R.string.description_33,
+                warning = R.string.warning_33,
+                photo = R.drawable.leaves_png_isolated_file
             ),
 
             Plant(
                 id = 34,
-                name = "Cumin",
-                category = "Medicinal",
-                description = R.string.decription_0,
-                use = R.string.use_0,
-                photo = R.drawable.leaf_vector
+                name = "Mătrăguna",
+                category = "Otrăvitoare",
+                medicinal = null,
+                poisonous = R.string.uses_34,
+                description = R.string.description_34,
+                warning = R.string.warning_34,
+                photo = R.drawable.leaves_png_isolated_file
             ),
 
-
-
-
-
-
-
-
-
-
-
-
+            Plant(
+                id = 35,
+                name = "Joianul",
+                category = "Otrăvitoare",
+                medicinal = null,
+                poisonous = R.string.uses_35,
+                description = R.string.description_35,
+                warning = R.string.warning_35,
+                photo = R.drawable.leaves_png_isolated_file
             )
+        )
     }
 }
