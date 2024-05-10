@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
                 val loginFlow = viewModel?.loginFlow?.collectAsState()
                 if (loginFlow?.value is Resource.Success) {
                     Scaffold(
-                        topBar = { AddAppBar(viewModel, navController) },
+                        topBar = { AddAppBar( navController) },
                         content = { padding ->
                             Surface(
                                 modifier = Modifier.padding(padding),

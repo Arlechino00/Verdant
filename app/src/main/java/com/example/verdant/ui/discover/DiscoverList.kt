@@ -1,11 +1,9 @@
 package com.example.verdant.ui.discover
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,10 +11,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -38,11 +39,37 @@ import com.example.verdant.data.Plant
 fun Discover() {
     val viewModel: PlantViewModel = viewModel()
     val uiState by viewModel.uiState.collectAsState()
-    PlantList(plant = uiState.plantList, onClick = { /*TODO*/ })
+
+    Scaffold {innerPadding ->
+        if (uiState.isShowingListPage) {
+            PlantList(
+                plant = uiState.plantList,
+                onClick = {
+                    viewModel.updateCurrentPlant(it)
+                    viewModel.navigateToDetailPage()
+                },
+                contentPadding = innerPadding
+            )
+        } else{
+            PlantDetail(
+                plant = uiState.currentPlant,
+                navigateUp = {
+                    viewModel.navigateToListPage()
+                },
+                contentPadding = innerPadding,
+                modifier = Modifier
+            )
+        }
+    }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PlantCard(dataItem: Plant, modifier: Modifier = Modifier) {
+fun PlantCard(
+    dataItem: Plant,
+    onItemClick: (Plant) -> Unit,
+    modifier: Modifier = Modifier
+) {
     Card(
         modifier = modifier
             .shadow(
@@ -55,6 +82,7 @@ fun PlantCard(dataItem: Plant, modifier: Modifier = Modifier) {
         elevation = CardDefaults.cardElevation(2.dp),
         shape = RoundedCornerShape(dimensionResource(id = R.dimen.list_item_inner_padding)),
         colors = CardDefaults.cardColors(MaterialTheme.colorScheme.onPrimary),
+        onClick = {onItemClick(dataItem)}
     ) {
         Row(
             modifier = Modifier
@@ -94,26 +122,38 @@ fun PlantCard(dataItem: Plant, modifier: Modifier = Modifier) {
 @Composable
 fun PlantList(
     plant: List<Plant>,
-    onClick: () -> Unit,
+    onClick: (Plant) -> Unit,
+    contentPadding: PaddingValues = PaddingValues((5.dp)),
     modifier: Modifier = Modifier,
 ) {
-    val viewModel: PlantViewModel = viewModel()
+    val scrollState = rememberLazyListState()
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.detail_card_list_padding_top)),
         modifier = Modifier
             .fillMaxSize()
-            .padding(horizontal = dimensionResource(id = R.dimen.list_item_horizontal_spacing))
+            .padding(horizontal = dimensionResource(id = R.dimen.list_item_horizontal_spacing)),
+        state = scrollState
     ) {
         items(items = plant, key = { plant -> plant.id }) { plant ->
             if(plant.id == 0){
-                PlantCard(dataItem = plant, modifier = Modifier.padding(top = dimensionResource(id = R.dimen.list_item_vertical_spacing)))
+                PlantCard(
+                    dataItem = plant,
+                    onItemClick = onClick,
+                    modifier = Modifier.padding(top = dimensionResource(id = R.dimen.list_item_vertical_spacing)))
             }
             else if(plant.id == 35){
-                PlantCard(dataItem = plant, modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.list_item_vertical_spacing)))
+                PlantCard(
+                    dataItem = plant,
+                    onItemClick = onClick,
+                    modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.list_item_vertical_spacing)))
             }
             
             else{
-                PlantCard(dataItem = plant)
+                PlantCard(
+                    dataItem = plant,
+                    onItemClick = onClick,
+
+                    )
             }
         }
     }

@@ -174,7 +174,7 @@ fun SignupScreen(viewModel: AuthViewModel?, navController: NavHostController) {
                 }
                 is Resource.Success -> {
                     LaunchedEffect(Unit) {
-                        navController.navigate(NavigationItem.Profile.route) {
+                        navController.navigate(NavigationItem.Home.route) {
                             popUpTo(NavigationItem.SignIn.route) { inclusive = true }
                         }
                     }

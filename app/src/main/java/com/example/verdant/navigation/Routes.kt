@@ -9,6 +9,7 @@ sealed class NavigationItem(var route: String, var icon: Int, var title: String)
 
     data object Home: NavigationItem("home", R.drawable.home_icon, "Home")
     data object Discover: NavigationItem("discover", R.drawable.book_icon, "Discover")
+    data object PlantDetail: NavigationItem("plantdetail", R.drawable.ic_launcher_background, "Plant Detail")
     data object Sherlock: NavigationItem("sherlock", R.drawable.search_icon, "Sherlock")
     data object Profile: NavigationItem("profile", R.drawable.baseline_person_24, "Profile")
 }

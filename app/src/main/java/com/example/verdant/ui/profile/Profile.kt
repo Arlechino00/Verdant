@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -22,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.verdant.R
 import com.example.verdant.login.ui.auth.AuthViewModel
+import com.example.verdant.navigation.NavigationItem
 import com.example.verdant.ui.theme.VerdantTheme
 import com.example.verdant.ui.theme.spacing
 
@@ -35,7 +37,7 @@ fun ProfileUI(
             Surface(
                 modifier = Modifier.padding(padding),
             ) {
-                ProfileScreen(viewModel = viewModel)
+                ProfileScreen(viewModel = viewModel, navController = navController)
             }
         },
         //bottomBar = { BottomBar(viewModel = viewModel, navController) }
@@ -44,7 +46,7 @@ fun ProfileUI(
 
 
 @Composable
-fun ProfileScreen(viewModel: AuthViewModel?) {
+fun ProfileScreen(viewModel: AuthViewModel?, navController: NavHostController) {
     val spacing = MaterialTheme.spacing
     Column(
         modifier = Modifier
@@ -119,17 +121,29 @@ fun ProfileScreen(viewModel: AuthViewModel?) {
                 )
             }
 
-
+            Button(
+                onClick = {
+                viewModel?.logout()
+                navController.navigate(NavigationItem.Login.route) {
+                    popUpTo(NavigationItem.Profile.route) { inclusive = true }
+                }
+            },
+                modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
+                    .padding(15.dp)
+            ) {
+                    Text(text = "Logout")
+            }
         }
     }
 }
 
-
+/*
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Composable
 fun HomeScreenPreviewLight() {
     VerdantTheme {
-        ProfileScreen(null)
+        ProfileScreen(null, )
     }
 }
 
@@ -139,4 +153,4 @@ fun HomeScreenPreviewDark() {
     VerdantTheme {
         ProfileScreen(null)
     }
-}
+}*/

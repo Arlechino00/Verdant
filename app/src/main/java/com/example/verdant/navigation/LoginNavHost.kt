@@ -5,11 +5,14 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.verdant.data.Plant
+import com.example.verdant.data.local.Plants
 import com.example.verdant.login.ui.auth.AuthViewModel
 import com.example.verdant.login.ui.auth.LoginScreen
 import com.example.verdant.login.ui.auth.SignupScreen
 import com.example.verdant.ui.AI.AIUi
 import com.example.verdant.ui.discover.Discover
+import com.example.verdant.ui.discover.PlantDetail
 import com.example.verdant.ui.home.HomeUI
 import com.example.verdant.ui.profile.ProfileUI
 
@@ -54,3 +57,4 @@ fun AppNavHost(
 
     }
 }
+
