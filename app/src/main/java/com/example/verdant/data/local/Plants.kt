@@ -1,12 +1,20 @@
 package com.example.verdant.data.local
 
+import android.content.Context
 import com.example.verdant.R
 import com.example.verdant.data.Plant
 
 object Plants {
-    val defaultPlant = getPlants()[0]
+    //val defaultPlant = getPlantsList()[0]
 
-    fun getPlants(): List<Plant>{
+    fun getPlant(
+        id: Int,
+        context: Context
+    ): Plant = getPlantsList(context).find {
+        it.id == id
+    }!!
+
+    fun getPlantsList(context: Context): List<Plant>{
         return listOf(
             Plant(
                 id = 0,

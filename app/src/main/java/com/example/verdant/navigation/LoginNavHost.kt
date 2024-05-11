@@ -1,10 +1,13 @@
 package com.example.verdant.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
 import com.example.verdant.data.Plant
 import com.example.verdant.data.local.Plants
 import com.example.verdant.login.ui.auth.AuthViewModel
@@ -24,6 +27,8 @@ fun AppNavHost(
     navController: NavHostController,
     startDestination: String = NavigationItem.Login.route
 ) {
+    val actions = remember(navController) { DiscoverActions(navController) }
+
     NavHost(
         modifier = modifier,
         navController = navController,
@@ -44,7 +49,22 @@ fun AppNavHost(
         }
 
         composable(NavigationItem.Discover.route){
-            Discover()
+            Discover(selectedPlant = actions.selectedPlant)
+        }
+
+        composable(
+            "${NavigationItem.PlantDetail}/{${"id"}}",
+            arguments = listOf(
+                navArgument("id") {
+                    type = NavType.IntType
+                }
+            )
+        ) { backStackEntry ->
+            val arguments = requireNotNull(backStackEntry.arguments)
+            PlantDetail(
+                id = arguments.getInt("id"),
+                navigateUp = actions.navigateUp
+            )
         }
 
         composable(NavigationItem.Sherlock.route){
@@ -57,4 +77,16 @@ fun AppNavHost(
 
     }
 }
+
+private class DiscoverActions(
+    navController: NavHostController
+) {
+    val selectedPlant: (Int) -> Unit = { id: Int ->
+        navController.navigate("${NavigationItem.PlantDetail.route}/$id")
+    }
+    val navigateUp: () -> Unit = {
+        navController.navigateUp()
+    }
+}
+
 

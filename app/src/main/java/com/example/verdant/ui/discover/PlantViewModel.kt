@@ -10,11 +10,12 @@ import kotlinx.coroutines.flow.update
 
 data class ListUiState(
     val plantList: List<Plant> = emptyList(),
-    val currentPlant: Plant = Plants.defaultPlant,
+    //val currentPlant: Plant = Plants.defaultPlant,
     val isShowingListPage: Boolean = true
 )
 
 class PlantViewModel: ViewModel() {
+    /*
     private val _uiState = MutableStateFlow(
         ListUiState(
             plantList = Plants.getPlants(),
@@ -43,4 +44,6 @@ class PlantViewModel: ViewModel() {
             it.copy(isShowingListPage = false)
         }
     }
+
+     */
 }

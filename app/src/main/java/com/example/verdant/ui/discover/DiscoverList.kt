@@ -27,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -34,40 +35,20 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberAsyncImagePainter
 import com.example.verdant.R
 import com.example.verdant.data.Plant
+import com.example.verdant.data.local.Plants
 
 @Composable
-fun Discover() {
-    val viewModel: PlantViewModel = viewModel()
-    val uiState by viewModel.uiState.collectAsState()
-
-    Scaffold {innerPadding ->
-        if (uiState.isShowingListPage) {
-            PlantList(
-                plant = uiState.plantList,
-                onClick = {
-                    viewModel.updateCurrentPlant(it)
-                    viewModel.navigateToDetailPage()
-                },
-                contentPadding = innerPadding
-            )
-        } else{
-            PlantDetail(
-                plant = uiState.currentPlant,
-                navigateUp = {
-                    viewModel.navigateToListPage()
-                },
-                contentPadding = innerPadding,
-                modifier = Modifier
-            )
-        }
-    }
+fun Discover(
+    selectedPlant: (Int) -> Unit
+) {
+    PlantList(selectedPlant)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PlantCard(
     dataItem: Plant,
-    onItemClick: (Plant) -> Unit,
+    selectedPlant: (Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Card(
@@ -82,7 +63,7 @@ fun PlantCard(
         elevation = CardDefaults.cardElevation(2.dp),
         shape = RoundedCornerShape(dimensionResource(id = R.dimen.list_item_inner_padding)),
         colors = CardDefaults.cardColors(MaterialTheme.colorScheme.onPrimary),
-        onClick = {onItemClick(dataItem)}
+        onClick = {selectedPlant(dataItem.id)}
     ) {
         Row(
             modifier = Modifier
@@ -121,12 +102,12 @@ fun PlantCard(
 
 @Composable
 fun PlantList(
-    plant: List<Plant>,
-    onClick: (Plant) -> Unit,
-    contentPadding: PaddingValues = PaddingValues((5.dp)),
-    modifier: Modifier = Modifier,
+    selectedPlant: (Int) -> Unit,
 ) {
     val scrollState = rememberLazyListState()
+    val context = LocalContext.current
+    val plants: List<Plant> = Plants.getPlantsList(context)
+
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.detail_card_list_padding_top)),
         modifier = Modifier
@@ -134,25 +115,24 @@ fun PlantList(
             .padding(horizontal = dimensionResource(id = R.dimen.list_item_horizontal_spacing)),
         state = scrollState
     ) {
-        items(items = plant, key = { plant -> plant.id }) { plant ->
+        items(items = plants) { plant ->
             if(plant.id == 0){
                 PlantCard(
                     dataItem = plant,
-                    onItemClick = onClick,
+                    selectedPlant,
                     modifier = Modifier.padding(top = dimensionResource(id = R.dimen.list_item_vertical_spacing)))
             }
             else if(plant.id == 35){
                 PlantCard(
                     dataItem = plant,
-                    onItemClick = onClick,
+                    selectedPlant,
                     modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.list_item_vertical_spacing)))
             }
             
             else{
                 PlantCard(
                     dataItem = plant,
-                    onItemClick = onClick,
-
+                    selectedPlant
                     )
             }
         }

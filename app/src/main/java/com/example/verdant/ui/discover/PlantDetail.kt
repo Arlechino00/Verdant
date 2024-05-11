@@ -1,6 +1,8 @@
 package com.example.verdant.ui.discover
 
 import androidx.activity.compose.BackHandler
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.expandVertically
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -23,10 +25,12 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -38,6 +42,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ColorMatrix
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
@@ -47,39 +52,60 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.verdant.R
 import com.example.verdant.data.Plant
+import com.example.verdant.data.local.Plants
+import kotlinx.coroutines.FlowPreview
 import androidx.compose.material3.TopAppBar as TopAppBar1
 
+@OptIn(FlowPreview::class)
 @Composable
 fun PlantDetail(
-    plant: Plant,
+    id: Int,
     navigateUp: () -> Unit,
-    contentPadding: PaddingValues,
-    modifier: Modifier
+
 ){
+    val context = LocalContext.current
+
+    val plant: Plant = remember(id){
+        Plants.getPlant(
+            id, context
+        )
+    }
 
 
+    AnimatedVisibility(
+        visible = true,
+        enter = expandVertically(
+            expandFrom = Alignment.Top,
+            initialHeight = { 0 }
+        )
+    ) {
+        SetPlantDetails(plant, navigateUp)
+    }
+
+}
+
+@Composable
+fun SetPlantDetails(
+    plant: Plant,
+    navigateUp: () -> Unit
+){
     val scroll = rememberScrollState()
-    val layoutDirection = LocalLayoutDirection.current
 
-    Box(
-        modifier = modifier
-            .verticalScroll(state = scroll)
-            .padding(top = contentPadding.calculateTopPadding())
-    ){
-        Column(
+    Surface {
+        Box(
             modifier = Modifier
-                .padding(
-                    bottom = contentPadding.calculateTopPadding(),
-                    start = contentPadding.calculateStartPadding(layoutDirection)
-                )
-                .background(MaterialTheme.colorScheme.background)
-        ) {
-            PlantImage(plant, navigateUp)
-            Details(plant)
+                .verticalScroll(state = scroll)
+        ){
+            Column(
+                modifier = Modifier
+                    .background(MaterialTheme.colorScheme.background)
+            ) {
+                PlantImage(plant, navigateUp)
+                Details(plant)
+            }
         }
     }
 }
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

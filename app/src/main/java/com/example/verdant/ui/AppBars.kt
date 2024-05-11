@@ -47,7 +47,7 @@ import com.example.verdant.ui.discover.PlantViewModel
 @Composable
 fun AddAppBar( navController: NavController) {
     val viewModel: PlantViewModel = viewModel()
-    val uiState by viewModel.uiState.collectAsState()
+    //val uiState by viewModel.uiState.collectAsState()
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
