@@ -122,29 +122,13 @@ fun PlantImage(
             alignment = Alignment.Center,
             modifier = Modifier
                 .fillMaxSize()
-                .height(240.dp)
+                .height(300.dp)
                 .clip(RoundedCornerShape(dimensionResource(id = R.dimen.list_item_inner_padding)))
             ,
             contentScale = ContentScale.Crop,
             colorFilter = filter
         )
-        TopAppBar(
-            title = {},
-            colors = TopAppBarDefaults.topAppBarColors(
-                containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0f)
-            ),
-            navigationIcon = {
-                IconButton(onClick = navigateUp) {
-                    Icon(
-                        imageVector = Icons.Rounded.ArrowBack,
-                        contentDescription = "Back",
-                        tint = MaterialTheme.colorScheme.surface,
-                        modifier = Modifier
-                            .size(45.dp)
-                    )
-                }
-            }
-            )
+
     }
 }
 

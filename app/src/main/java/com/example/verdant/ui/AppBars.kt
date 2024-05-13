@@ -10,6 +10,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -55,23 +56,38 @@ fun AddAppBar( navController: NavController) {
             Row (
                 verticalAlignment = Alignment.CenterVertically
             ){
-                Text(
-                    stringResource(id = R.string.app_name),
-                    color = MaterialTheme.colorScheme.surface,
-                    fontWeight = FontWeight.W500,
-                    style = MaterialTheme.typography.headlineMedium
-                )
+                if(currentRoute == "PlantDetail/{id}"){
+                    Text(
+                        "Back",
+                        color = MaterialTheme.colorScheme.surface,
+                        fontWeight = FontWeight.W500,
+                        style = MaterialTheme.typography.headlineMedium
+                    )
+                }
+                   else {
+                    Text(
+                        currentRoute.toString(),
+                        color = MaterialTheme.colorScheme.surface,
+                        fontWeight = FontWeight.W500,
+                        style = MaterialTheme.typography.headlineMedium
+                    )
+                   }
+            }
+        },
+        navigationIcon = {
+            if (currentRoute == "PlantDetail/{id}" || currentRoute == NavigationItem.Profile.route) {
+                IconButton(onClick = { navController.popBackStack() }) {
+                    Icon(
+                        imageVector = Icons.Rounded.ArrowBack,
+                        contentDescription = "Back",
+                        tint = MaterialTheme.colorScheme.surface,
+
+                    )
+                }
             }
         },
         
         actions = {
-            /*Card(
-                shape = CircleShape,
-                colors = CardDefaults.cardColors(MaterialTheme.colorScheme.background),
-                modifier = Modifier
-                    .size(45.dp)
-                    .padding(2.dp)
-                ) {*/
                 if(currentRoute != NavigationItem.Profile.route) {
                     IconButton(onClick = {
                         navController.navigate(NavigationItem.Profile.route)
@@ -86,20 +102,6 @@ fun AddAppBar( navController: NavController) {
                         )
                     }
                 }
-                else {
-                    /*IconButton(onClick = { navController.navigateUp()}) {
-                        Icon(
-                            imageVector = Icons.Default.ArrowForward,
-                            contentDescription = "logout",
-                            modifier = Modifier
-                                .size(30.dp),
-                            tint = MaterialTheme.colorScheme.surface
-                        )
-
-                    }
-                */}
-            //}
-
         },
         colors = TopAppBarDefaults.topAppBarColors(MaterialTheme.colorScheme.primary),
     )

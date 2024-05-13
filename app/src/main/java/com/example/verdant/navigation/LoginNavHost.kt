@@ -1,7 +1,10 @@
 package com.example.verdant.navigation
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.expandVertically
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -16,6 +19,7 @@ import com.example.verdant.login.ui.auth.SignupScreen
 import com.example.verdant.ui.AI.AIUi
 import com.example.verdant.ui.discover.Discover
 import com.example.verdant.ui.discover.PlantDetail
+import com.example.verdant.ui.discover.SetPlantDetails
 import com.example.verdant.ui.home.HomeUI
 import com.example.verdant.ui.profile.ProfileUI
 
@@ -61,10 +65,19 @@ fun AppNavHost(
             )
         ) { backStackEntry ->
             val arguments = requireNotNull(backStackEntry.arguments)
-            PlantDetail(
-                id = arguments.getInt("id"),
-                navigateUp = actions.navigateUp
-            )
+            AnimatedVisibility(
+                visible = true,
+                enter = expandVertically(
+                    expandFrom = Alignment.Top,
+                    initialHeight = { 0 }
+                )
+            ) {
+                PlantDetail(
+                    id = arguments.getInt("id"),
+                    navigateUp = actions.navigateUp
+                )
+            }
+
         }
 
         composable(NavigationItem.Sherlock.route){
