@@ -100,7 +100,7 @@ fun SetPlantDetails(
                 modifier = Modifier
                     .background(MaterialTheme.colorScheme.background)
             ) {
-                PlantImage(plant, navigateUp)
+                PlantImage(plant)
                 Details(plant)
             }
         }
@@ -111,7 +111,6 @@ fun SetPlantDetails(
 @Composable
 fun PlantImage(
     plant: Plant,
-    navigateUp: () -> Unit,
 ){
     val filter = ColorFilter.tint(Color.Black, BlendMode.DstAtop)
 
@@ -297,7 +296,7 @@ fun Warning(plant: Plant){
             .padding(dimensionResource(id = R.dimen.list_item_horizontal_spacing))
     ) {
         Text(
-            text = "Efecte",
+            text = "Avertisment",
             fontWeight = FontWeight.W600,
             style = MaterialTheme.typography.titleMedium,
             modifier = Modifier

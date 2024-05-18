@@ -30,7 +30,9 @@ class MainActivity : ComponentActivity() {
             VerdantTheme {
                 val navController: NavHostController =  rememberNavController()
                 val loginFlow = viewModel?.loginFlow?.collectAsState()
-                if (loginFlow?.value is Resource.Success) {
+                val signupFlow = viewModel?.signupFlow?.collectAsState()
+
+                if (loginFlow?.value is Resource.Success || signupFlow?.value is Resource.Success) {
                     Scaffold(
                         topBar = { AddAppBar( navController) },
                         content = { padding ->

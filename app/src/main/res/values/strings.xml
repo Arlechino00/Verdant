@@ -3,11 +3,11 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
-    <string name="dont_have_account">Do not have an account?\nClick here to sign up</string>
+    <string name="dont_have_account">Do not have an account?</string>
     <string name="name">Name</string>
-    <string name="signup">Signup</string>
-    <string name="already_have_account">Already have an account?\nClick here to login</string>
-    <string name="welcome_back">Welcome Back</string>
+    <string name="signup">Register</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="welcome_back">Welcome back,</string>
     <string name="empty"/>
     <string name="logout">Logout</string>
 
@@ -173,7 +173,7 @@
         Socul negru este o specie de plante din grupa arbuștilor cu 20-30 de soiuri din familia Adoxaceae, nativă Europei, nord-vestului Africii și sud-vestului Asiei.
     </string>
     <string name="use_22">
-        Extracte de scoarță, frunze, flori, fructe și rădăcini sunt utilizate pentru tratarea bronșitei, tusei, infecțiilor sistemului respirator superior, febrei. \n
+        Extracte de scoarță, frunze, flori, fructe și rădăcini sunt utilizate pentru tratarea bronșitei, tusei, infecțiilor sistemului respirator superior, febrei.
     </string>
     <string name="warning_22">
         Fructele crude și necoapte ale soc negru sunt toxice și pot provoca greață, vărsături și diaree. Doar fructele coapte complet pot fi consumate în siguranță, de obicei gătite sub formă de siropuri, gemuri sau vin. Toate celelalte părți ale plantei, cu excepția florilor, pot fi toxice în stare crudă.

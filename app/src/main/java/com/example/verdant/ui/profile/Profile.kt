@@ -32,16 +32,8 @@ fun ProfileUI(
     viewModel: AuthViewModel?,
     navController: NavHostController
 ){
-    Scaffold(
-        content = { padding ->
-            Surface(
-                modifier = Modifier.padding(padding),
-            ) {
-                ProfileScreen(viewModel = viewModel, navController = navController)
-            }
-        },
-        //bottomBar = { BottomBar(viewModel = viewModel, navController) }
-    )
+    ProfileScreen(viewModel = viewModel, navController = navController)
+
 }
 
 

@@ -46,7 +46,7 @@ import com.example.verdant.ui.discover.PlantViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AddAppBar( navController: NavController) {
+fun AddAppBar(navController: NavController) {
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
@@ -69,7 +69,7 @@ fun AddAppBar( navController: NavController) {
                         currentRoute.toString(),
                         color = MaterialTheme.colorScheme.surface,
                         fontWeight = FontWeight.W500,
-                        style = MaterialTheme.typography.headlineMedium
+                        style = MaterialTheme.typography.headlineSmall
                     )
                    }
             }
@@ -88,7 +88,7 @@ fun AddAppBar( navController: NavController) {
         },
         
         actions = {
-                if(currentRoute != NavigationItem.Profile.route) {
+                if(currentRoute == NavigationItem.Home.route) {
                     IconButton(onClick = {
                         navController.navigate(NavigationItem.Profile.route)
                     }

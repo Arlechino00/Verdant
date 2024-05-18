@@ -40,5 +40,6 @@
     <dimen name="card_space">15dp</dimen>
     <dimen name="open_page_space">60dp</dimen>
     <dimen name="card_width">130dp</dimen>
+    <dimen name="spacer">30dp</dimen>
 
 </resources>

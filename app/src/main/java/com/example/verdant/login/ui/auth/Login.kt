@@ -27,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester.Companion.createRefs
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
@@ -54,7 +55,7 @@ fun LoginScreen(viewModel: AuthViewModel?, navController: NavController) {
         modifier = Modifier.fillMaxSize()
     ) {
 
-        val (refHeader, refEmail, refPassword, refButtonLogin, refTextSignup, refLoader) = createRefs()
+        val (refHeader, refEmail, refPassword, refButtonLogin, refTextSignup, refTextRegister, refLoader) = createRefs()
         val spacing = MaterialTheme.spacing
 
         Box(
@@ -130,11 +131,22 @@ fun LoginScreen(viewModel: AuthViewModel?, navController: NavController) {
             Text(text = stringResource(id = R.string.login), style = MaterialTheme.typography.titleMedium)
         }
 
-
         Text(
             modifier = Modifier
-                .constrainAs(refTextSignup) {
-                    top.linkTo(refButtonLogin.bottom, spacing.medium)
+            .constrainAs(refTextSignup) {
+                top.linkTo(refButtonLogin.bottom, spacing.medium)
+                start.linkTo(parent.start, spacing.extraLarge)
+                end.linkTo(parent.end, spacing.extraLarge)
+            },
+            text = stringResource(id = R.string.dont_have_account),
+            style = MaterialTheme.typography.bodyLarge,
+            textAlign = TextAlign.Center,
+            color = MaterialTheme.colorScheme.onSurface
+        )
+        Text(
+            modifier = Modifier
+                .constrainAs(refTextRegister) {
+                    top.linkTo(refTextSignup.bottom, spacing.medium)
                     start.linkTo(parent.start, spacing.extraLarge)
                     end.linkTo(parent.end, spacing.extraLarge)
                 }
@@ -143,10 +155,11 @@ fun LoginScreen(viewModel: AuthViewModel?, navController: NavController) {
                         popUpTo(NavigationItem.Login.route) { inclusive = true }
                     }
                 },
-            text = stringResource(id = R.string.dont_have_account),
+            text = stringResource(id = R.string.signup),
             style = MaterialTheme.typography.bodyLarge,
             textAlign = TextAlign.Center,
-            color = MaterialTheme.colorScheme.onSurface
+            fontWeight = FontWeight.W600,
+            color = MaterialTheme.colorScheme.primary
         )
 
         loginFlow?.value?.let {

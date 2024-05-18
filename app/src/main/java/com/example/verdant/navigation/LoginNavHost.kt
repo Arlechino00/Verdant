@@ -3,6 +3,7 @@ package com.example.verdant.navigation
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -13,6 +14,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.verdant.data.Plant
 import com.example.verdant.data.local.Plants
+import com.example.verdant.login.data.Resource
 import com.example.verdant.login.ui.auth.AuthViewModel
 import com.example.verdant.login.ui.auth.LoginScreen
 import com.example.verdant.login.ui.auth.SignupScreen
@@ -33,10 +35,17 @@ fun AppNavHost(
 ) {
     val actions = remember(navController) { DiscoverActions(navController) }
 
+    val loginFlow = viewModel.loginFlow.collectAsState()
+    val signUpFlow = viewModel.signupFlow.collectAsState()
+
     NavHost(
         modifier = modifier,
         navController = navController,
-        startDestination = startDestination
+        startDestination = (if (loginFlow.value is Resource.Success || signUpFlow.value is Resource.Success){
+            NavigationItem.Home.route
+        } else {
+            NavigationItem.Login.route
+        }).toString()
     ) {
 
         composable(NavigationItem.Login.route) {
@@ -49,7 +58,7 @@ fun AppNavHost(
 
 
         composable(NavigationItem.Home.route) {
-            HomeUI()
+            HomeUI(viewModel, navController)
         }
 
         composable(NavigationItem.Discover.route){

@@ -13,6 +13,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
@@ -42,7 +43,7 @@ fun SignupScreen(viewModel: AuthViewModel?, navController: NavHostController) {
     ConstraintLayout(
         modifier = Modifier.fillMaxSize()
     ) {
-        val (refHeader, refName, refEmail, refPassword, refButtonSignup, refTextSignup, refLoader) = createRefs()
+        val (refHeader, refName, refEmail, refPassword, refButtonSignup, refTextSignup, refTextRegister, refLoader) = createRefs()
         val spacing = MaterialTheme.spacing
 
         Box(
@@ -156,6 +157,25 @@ fun SignupScreen(viewModel: AuthViewModel?, navController: NavHostController) {
             style = MaterialTheme.typography.bodyLarge,
             textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.onSurface
+        )
+
+        Text(
+            modifier = Modifier
+                .constrainAs(refTextRegister) {
+                    top.linkTo(refTextSignup.bottom, spacing.medium)
+                    start.linkTo(parent.start, spacing.extraLarge)
+                    end.linkTo(parent.end, spacing.extraLarge)
+                }
+                .clickable {
+                    navController.navigate(NavigationItem.Login.route) {
+                        popUpTo(NavigationItem.Login.route) { inclusive = true }
+                    }
+                },
+            text = stringResource(id = R.string.login),
+            style = MaterialTheme.typography.bodyLarge,
+            textAlign = TextAlign.Center,
+            fontWeight = FontWeight.W600,
+            color = MaterialTheme.colorScheme.primary
         )
 
         signupFlow?.value?.let {
