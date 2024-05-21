@@ -1,6 +1,7 @@
 package com.example.verdant
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -8,14 +9,19 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.verdant.login.data.Resource
 import com.example.verdant.navigation.AppNavHost
 import com.example.verdant.login.ui.auth.AuthViewModel
+import com.example.verdant.navigation.NavigationItem
 import com.example.verdant.ui.AddAppBar
 import com.example.verdant.ui.BottomBar
+import com.example.verdant.ui.discover.searchbar.SearchBarViewModel
 import com.example.verdant.ui.theme.VerdantTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,14 +38,18 @@ class MainActivity : ComponentActivity() {
                 val loginFlow = viewModel?.loginFlow?.collectAsState()
                 val signupFlow = viewModel?.signupFlow?.collectAsState()
 
+                val searchviewmodel: SearchBarViewModel = viewModel()
+                val searchWidgetState by searchviewmodel.searchWidgetState
+                val searchTextState by searchviewmodel.searchTextState
+
                 if (loginFlow?.value is Resource.Success || signupFlow?.value is Resource.Success) {
                     Scaffold(
-                        topBar = { AddAppBar( navController) },
+                        topBar = { AddAppBar( navController, searchTextState) },
                         content = { padding ->
                             Surface(
                                 modifier = Modifier.padding(padding),
                             ) {
-                                AppNavHost(viewModel, Modifier, navController)
+                                AppNavHost(viewModel, Modifier, navController, searchTextState)
                             }
                         },
                         bottomBar = { BottomBar(viewModel = viewModel, navController = navController) }
@@ -52,7 +62,7 @@ class MainActivity : ComponentActivity() {
                             Surface(
                                 modifier = Modifier.padding(padding),
                             ) {
-                                AppNavHost(viewModel, Modifier, navController)
+                                AppNavHost(viewModel, Modifier, navController, searchTextState)
                             }
                         },
                         //bottomBar = { BottomBar(viewModel = viewModel, navController = navController) }

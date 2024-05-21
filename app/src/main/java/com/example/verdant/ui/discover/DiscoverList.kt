@@ -1,8 +1,10 @@
 package com.example.verdant.ui.discover
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -32,16 +34,25 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import com.example.verdant.R
 import com.example.verdant.data.Plant
 import com.example.verdant.data.local.Plants
-
+import com.example.verdant.ui.AddAppBar
 @Composable
 fun Discover(
-    selectedPlant: (Int) -> Unit
+    selectedPlant: (Int) -> Unit,
+    navController: NavController,
+    searchTextState: String
 ) {
-    PlantList(selectedPlant)
+
+        PlantList(
+            searchTextState,
+            selectedPlant,
+            modifier = Modifier.background(color = MaterialTheme.colorScheme.background)
+        )
+
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -102,37 +113,45 @@ fun PlantCard(
 
 @Composable
 fun PlantList(
+    searchTextState: String,
     selectedPlant: (Int) -> Unit,
+    modifier: Modifier
 ) {
     val scrollState = rememberLazyListState()
     val context = LocalContext.current
     val plants: List<Plant> = Plants.getPlantsList(context)
 
     LazyColumn(
-        verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.detail_card_list_padding_top)),
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.detail_card_list_padding_top)/2),
         modifier = Modifier
             .fillMaxSize()
             .padding(horizontal = dimensionResource(id = R.dimen.list_item_horizontal_spacing)),
         state = scrollState
     ) {
-        items(items = plants) { plant ->
+        items(
+            items = plants
+                .filter { it.name.contains(searchTextState,ignoreCase = true) || it.category.contains(searchTextState, ignoreCase = true) },
+            key = {plants -> plants.id}
+        ) { plant ->
             when (plant.id) {
                 0 -> {
                     PlantCard(
                         dataItem = plant,
                         selectedPlant,
-                        modifier = Modifier.padding(top = dimensionResource(id = R.dimen.list_item_vertical_spacing)))
+                        Modifier.padding(top = dimensionResource(R.dimen.detail_card_list_padding_top), bottom = dimensionResource(R.dimen.detail_card_list_padding_top)/2))
                 }
                 35 -> {
                     PlantCard(
                         dataItem = plant,
                         selectedPlant,
-                        modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.list_item_vertical_spacing)))
+                        Modifier.padding(bottom = dimensionResource(R.dimen.detail_card_list_padding_top), top = dimensionResource(R.dimen.detail_card_list_padding_top)))
                 }
                 else -> {
                     PlantCard(
                         dataItem = plant,
-                        selectedPlant
+                        selectedPlant,
+                        Modifier.padding(vertical = dimensionResource(R.dimen.detail_card_list_padding_top)/2)
+
                     )
                 }
             }

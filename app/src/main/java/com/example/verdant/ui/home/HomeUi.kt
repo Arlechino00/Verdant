@@ -15,6 +15,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -46,7 +48,7 @@ fun HomeUI(viewModel: AuthViewModel?, navController: NavController){
 
 @Composable
 fun HomeSpacer(){
-    Box(
+    Card(
         modifier = Modifier
             .height(dimensionResource(id = R.dimen.spacer))
             .background(MaterialTheme.colorScheme.primaryContainer)
@@ -91,12 +93,14 @@ fun Explore(navController: NavController){
     val context = LocalContext.current
     val plants: List<Plant> = Plants.getPlantsList(context)
 
-    Column(
+    Card(
         Modifier
-            .padding(vertical = dimensionResource(id = R.dimen.text_padding))
-            .background(MaterialTheme.colorScheme.primaryContainer)
-            .clickable { navController.navigate(NavigationItem.Discover.route) }
-        ,
+            .padding(
+                vertical = dimensionResource(id = R.dimen.text_padding),
+                horizontal = dimensionResource(id = R.dimen.detail_card_outer_padding_horizontal)
+            )
+            .clickable { navController.navigate(NavigationItem.Discover.route) },
+        colors = CardDefaults.cardColors(MaterialTheme.colorScheme.primaryContainer)
     ) {
         Text(
             text = "Afla mai multe ...",

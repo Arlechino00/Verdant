@@ -31,6 +31,7 @@ fun AppNavHost(
     viewModel: AuthViewModel,
     modifier: Modifier = Modifier,
     navController: NavHostController,
+    searchTextState: String,
     startDestination: String = NavigationItem.Login.route
 ) {
     val actions = remember(navController) { DiscoverActions(navController) }
@@ -62,7 +63,7 @@ fun AppNavHost(
         }
 
         composable(NavigationItem.Discover.route){
-            Discover(selectedPlant = actions.selectedPlant)
+            Discover(selectedPlant = actions.selectedPlant, navController, searchTextState)
         }
 
         composable(

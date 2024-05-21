@@ -1,5 +1,6 @@
 package com.example.verdant.ui
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -43,52 +44,74 @@ import com.example.verdant.R
 import com.example.verdant.login.ui.auth.AuthViewModel
 import com.example.verdant.navigation.NavigationItem
 import com.example.verdant.ui.discover.PlantViewModel
+import com.example.verdant.ui.discover.searchbar.SearchAppBar
+import com.example.verdant.ui.discover.searchbar.SearchBarViewModel
+import com.example.verdant.ui.discover.searchbar.SearchWidgetState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AddAppBar(navController: NavController) {
+fun AddAppBar(navController: NavController, searchTextState: String) {
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
+    if(currentRoute == NavigationItem.Discover.route){
 
-    TopAppBar(
-        title = {
-            Row (
-                verticalAlignment = Alignment.CenterVertically
-            ){
-                if(currentRoute == "PlantDetail/{id}"){
-                    Text(
-                        "Back",
-                        color = MaterialTheme.colorScheme.surface,
-                        fontWeight = FontWeight.W500,
-                        style = MaterialTheme.typography.headlineMedium
-                    )
-                }
-                   else {
-                    Text(
-                        currentRoute.toString(),
-                        color = MaterialTheme.colorScheme.surface,
-                        fontWeight = FontWeight.W500,
-                        style = MaterialTheme.typography.headlineSmall
-                    )
-                   }
-            }
-        },
-        navigationIcon = {
-            if (currentRoute == "PlantDetail/{id}" || currentRoute == NavigationItem.Profile.route) {
-                IconButton(onClick = { navController.popBackStack() }) {
-                    Icon(
-                        imageVector = Icons.Rounded.ArrowBack,
-                        contentDescription = "Back",
-                        tint = MaterialTheme.colorScheme.surface,
+        val searchviewmodel: SearchBarViewModel = viewModel()
+        val searchWidgetState by searchviewmodel.searchWidgetState
 
-                    )
-                }
+        SearchAppBar(
+            searchWidgetState = searchWidgetState,
+            searchTextState = searchTextState,
+            onTextChange = {
+                searchviewmodel.updateSearchTextState(newValue = it)
+            },
+            onCloseClicked = {
+                searchviewmodel.updateSearchWidgetState(newValue = SearchWidgetState.CLOSED)
+            },
+            onSearchClicked = {
+                Log.d("Searched Text", it)
+            },
+            onSearchTriggered = {
+                searchviewmodel.updateSearchWidgetState(newValue = SearchWidgetState.OPENED)
             }
-        },
-        
-        actions = {
-                if(currentRoute == NavigationItem.Home.route) {
+        )
+}else{
+        TopAppBar(
+            title = {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    if (currentRoute == "PlantDetail/{id}") {
+                        Text(
+                            "",
+                            color = MaterialTheme.colorScheme.surface,
+                            fontWeight = FontWeight.Bold,
+                            style = MaterialTheme.typography.headlineMedium
+                        )
+                    } else {
+                        Text(
+                            currentRoute.toString(),
+                            color = MaterialTheme.colorScheme.surface,
+                            fontWeight = FontWeight.Bold,
+                            style = MaterialTheme.typography.headlineSmall
+                        )
+                    }
+                }
+            },
+            navigationIcon = {
+                if (currentRoute == "PlantDetail/{id}" || currentRoute == NavigationItem.Profile.route) {
+                    IconButton(onClick = { navController.popBackStack() }) {
+                        Icon(
+                            imageVector = Icons.Rounded.ArrowBack,
+                            contentDescription = "Back",
+                            tint = MaterialTheme.colorScheme.surface,
+                            )
+                    }
+                }
+            },
+
+            actions = {
+                if (currentRoute == NavigationItem.Home.route) {
                     IconButton(onClick = {
                         navController.navigate(NavigationItem.Profile.route)
                     }
@@ -102,9 +125,10 @@ fun AddAppBar(navController: NavController) {
                         )
                     }
                 }
-        },
-        colors = TopAppBarDefaults.topAppBarColors(MaterialTheme.colorScheme.primary),
-    )
+            },
+            colors = TopAppBarDefaults.topAppBarColors(MaterialTheme.colorScheme.primary),
+        )
+    }
 }
 
 
