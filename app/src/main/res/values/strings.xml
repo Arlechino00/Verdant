@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">Verdant</string>
     <string name="email">Email</string>
-    <string name="password">Password</string>
+    <string name="password">Parola</string>
     <string name="login">Login</string>
-    <string name="dont_have_account">Do not have an account?</string>
-    <string name="name">Name</string>
-    <string name="signup">Register</string>
-    <string name="already_have_account">Already have an account?</string>
-    <string name="welcome_back">Welcome back,</string>
+    <string name="dont_have_account">Nu ai cont?</string>
+    <string name="name">Nume</string>
+    <string name="signup">Inregistreaza-te</string>
+    <string name="already_have_account">Ai deja un cont?</string>
+    <string name="welcome_back">Bine ai revenit,</string>
     <string name="empty"/>
-    <string name="logout">Logout</string>
+    <string name="logout">Iesi</string>
 
     //Plants
     <string name="decription_0">
