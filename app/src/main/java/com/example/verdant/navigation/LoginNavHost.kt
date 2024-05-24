@@ -1,6 +1,7 @@
 package com.example.verdant.navigation
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.expandVertically
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -19,6 +20,7 @@ import com.example.verdant.login.ui.auth.AuthViewModel
 import com.example.verdant.login.ui.auth.LoginScreen
 import com.example.verdant.login.ui.auth.SignupScreen
 import com.example.verdant.ui.AI.AIUi
+import com.example.verdant.ui.AI.ImageLabelingScreen
 import com.example.verdant.ui.discover.Discover
 import com.example.verdant.ui.discover.PlantDetail
 import com.example.verdant.ui.discover.SetPlantDetails
@@ -26,6 +28,7 @@ import com.example.verdant.ui.home.HomeUI
 import com.example.verdant.ui.profile.ProfileUI
 
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun AppNavHost(
     viewModel: AuthViewModel,
@@ -42,7 +45,7 @@ fun AppNavHost(
     NavHost(
         modifier = modifier,
         navController = navController,
-        startDestination = (if (loginFlow.value is Resource.Success || signUpFlow.value is Resource.Success){
+        startDestination = (if (loginFlow.value is Resource.Success || signUpFlow.value is Resource.Success) {
             NavigationItem.Home.route
         } else {
             NavigationItem.Login.route
@@ -62,7 +65,7 @@ fun AppNavHost(
             HomeUI(viewModel, navController)
         }
 
-        composable(NavigationItem.Discover.route){
+        composable(NavigationItem.Discover.route) {
             Discover(selectedPlant = actions.selectedPlant, navController, searchTextState)
         }
 
@@ -90,8 +93,12 @@ fun AppNavHost(
 
         }
 
-        composable(NavigationItem.Sherlock.route){
-            AIUi()
+        composable(NavigationItem.Sherlock.route) {
+            AIUi(navController)
+        }
+
+        composable(route = NavigationItem.ImageClassifier.route) {
+            ImageLabelingScreen(navController)
         }
 
         composable(NavigationItem.Profile.route) {

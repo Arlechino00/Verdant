@@ -17,6 +17,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -43,6 +44,8 @@ fun HomeUI(viewModel: AuthViewModel?, navController: NavController){
         Header(viewModel)
         HomeSpacer()
         Explore(navController)
+        HomeSpacer()
+        ToSherlock(navController = navController)
     }
 }
 
@@ -103,11 +106,12 @@ fun Explore(navController: NavController){
         colors = CardDefaults.cardColors(MaterialTheme.colorScheme.primaryContainer)
     ) {
         Text(
-            text = "Afla mai multe ...",
+            text = "Află mai multe ...",
             style = MaterialTheme.typography.headlineSmall,
             color = MaterialTheme.colorScheme.primary,
             fontWeight = FontWeight.W600,
             modifier = Modifier
+                .padding(top = dimensionResource(id = R.dimen.text_padding))
                 .padding(horizontal = dimensionResource(id = R.dimen.text_padding))
             )
 
@@ -154,6 +158,37 @@ fun PlantRowPhoto(
             text = plant.name,
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.primary,
+        )
+    }
+}
+
+@Composable
+fun ToSherlock(navController: NavController){
+    Card(
+        Modifier
+            .padding(
+                vertical = dimensionResource(id = R.dimen.text_padding),
+                horizontal = dimensionResource(id = R.dimen.detail_card_outer_padding_horizontal)
+            )
+            .clickable { navController.navigate(NavigationItem.ImageClassifier.route) },
+        colors = CardDefaults.cardColors(MaterialTheme.colorScheme.primaryContainer)
+    ){
+        Text(
+            text = "Incearcă modelul AI",
+            style = MaterialTheme.typography.headlineSmall,
+            color = MaterialTheme.colorScheme.primary,
+            fontWeight = FontWeight.W600,
+            modifier = Modifier
+                .padding(top = dimensionResource(id = R.dimen.text_padding))
+                .padding(horizontal = dimensionResource(id = R.dimen.text_padding))
+        )
+        Icon(
+            painter = painterResource(id = R.drawable.search_icon),
+            contentDescription = "Sherlock",
+            tint = MaterialTheme.colorScheme.primary,
+            modifier = Modifier
+                .padding(dimensionResource(id = R.dimen.text_padding) / 2)
+                .fillMaxSize()
         )
     }
 }

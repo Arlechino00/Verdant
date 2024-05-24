@@ -94,6 +94,7 @@ fun PlantCard(
                     .weight(0.6f)
             )
 
+            Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = dataItem.name,
                     style = MaterialTheme.typography.titleLarge,
@@ -102,8 +103,19 @@ fun PlantCard(
                     modifier = Modifier
                         .padding(horizontal = dimensionResource(R.dimen.header_content_padding_vertical))
                         .fillMaxWidth()
-                        .weight(1f)
+                        //.weight(1f)
                 )
+                Text(
+                    text = dataItem.category,
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.primary,
+                    fontWeight = FontWeight.W500,
+                    modifier = Modifier
+                        .padding(horizontal = dimensionResource(R.dimen.header_content_padding_vertical))
+                        .fillMaxWidth()
+                        //.weight(1f)
+                )
+            }
 
 
         }

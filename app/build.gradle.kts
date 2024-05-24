@@ -65,8 +65,14 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.navigation.compose)
-
     implementation ("androidx.constraintlayout:constraintlayout-compose:1.0.1")
+
+    // CameraX
+    implementation ("androidx.camera:camera-camera2:1.3.3")
+    implementation ("androidx.camera:camera-lifecycle:1.3.3")
+    implementation ("androidx.camera:camera-view:1.3.3")
+
+
     implementation("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-android-compiler:2.51.1")
 
@@ -77,6 +83,12 @@ dependencies {
 
     //Coil
     implementation("io.coil-kt:coil-compose:2.4.0")
+
+    // MLKit
+    implementation ("com.google.mlkit:image-labeling:17.0.8")
+
+    implementation ("com.google.accompanist:accompanist-permissions:0.19.0")
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

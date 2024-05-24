@@ -75,7 +75,7 @@ fun AddAppBar(navController: NavController, searchTextState: String) {
                 searchviewmodel.updateSearchWidgetState(newValue = SearchWidgetState.OPENED)
             }
         )
-}else{
+    }else{
         TopAppBar(
             title = {
                 Row(
@@ -99,7 +99,8 @@ fun AddAppBar(navController: NavController, searchTextState: String) {
                 }
             },
             navigationIcon = {
-                if (currentRoute == "PlantDetail/{id}" || currentRoute == NavigationItem.Profile.route) {
+                if (currentRoute == "PlantDetail/{id}" || currentRoute == NavigationItem.Profile.route
+                    ||currentRoute == NavigationItem.ImageClassifier.route) {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(
                             imageVector = Icons.Rounded.ArrowBack,

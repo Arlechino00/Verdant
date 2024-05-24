@@ -340,7 +340,7 @@ object Plants {
 
             Plant(
                 id = 29,
-                name = "Lăcrămioara",
+                name = "Lăcrămioară",
                 category = "Otrăvitoare",
                 medicinal = null,
                 poisonous = R.string.uses_29,
@@ -351,7 +351,7 @@ object Plants {
 
             Plant(
                 id = 30,
-                name = "Omagul",
+                name = "Omag",
                 category = "Otrăvitoare",
                 medicinal = null,
                 poisonous = R.string.uses_30,
@@ -373,7 +373,7 @@ object Plants {
 
             Plant(
                 id = 32,
-                name = "Leandrul",
+                name = "Leandru",
                 category = "Otrăvitoare",
                 medicinal = null,
                 poisonous = R.string.uses_32,
@@ -384,7 +384,7 @@ object Plants {
 
             Plant(
                 id = 33,
-                name = "Ricinul",
+                name = "Ricin",
                 category = "Otrăvitoare",
                 medicinal = null,
                 poisonous = R.string.uses_33,
@@ -395,7 +395,7 @@ object Plants {
 
             Plant(
                 id = 34,
-                name = "Mătrăguna",
+                name = "Mătrăgună",
                 category = "Otrăvitoare",
                 medicinal = null,
                 poisonous = R.string.uses_34,
@@ -406,7 +406,7 @@ object Plants {
 
             Plant(
                 id = 35,
-                name = "Joianul",
+                name = "Joian",
                 category = "Otrăvitoare",
                 medicinal = null,
                 poisonous = R.string.uses_35,
