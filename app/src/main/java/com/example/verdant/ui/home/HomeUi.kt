@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -14,7 +15,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -40,12 +43,19 @@ import com.example.verdant.navigation.NavigationItem
 
 @Composable
 fun HomeUI(viewModel: AuthViewModel?, navController: NavController){
-    Column {
+    val scroll = rememberScrollState()
+
+    Column(Modifier.fillMaxHeight()) {
         Header(viewModel)
-        HomeSpacer()
-        Explore(navController)
-        HomeSpacer()
-        ToSherlock(navController = navController)
+        Column(
+            modifier = Modifier
+            .verticalScroll(state = scroll)
+        ) {
+            HomeSpacer()
+            Explore(navController)
+            HomeSpacer()
+            ToSherlock(navController = navController)
+        }
     }
 }
 
@@ -124,7 +134,6 @@ fun Explore(navController: NavController){
             items(items = plants.filter { it.id < 6 }) {
                 if (it.id == 0){
                     PlantRowPhoto(it, Modifier.padding(start = dimensionResource(id = R.dimen.text_padding)))
-
                 }
                 else{
                     PlantRowPhoto(it, Modifier)
@@ -188,7 +197,9 @@ fun ToSherlock(navController: NavController){
             tint = MaterialTheme.colorScheme.primary,
             modifier = Modifier
                 .padding(dimensionResource(id = R.dimen.text_padding) / 2)
-                .fillMaxSize()
+                .height(200.dp)
+                .fillMaxWidth()
+                .fillMaxSize(0.7f)
         )
     }
 }

@@ -8,54 +8,37 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.res.vectorResource
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import androidx.navigation.compose.currentBackStackEntryAsState
 import coil.compose.rememberImagePainter
 import com.example.verdant.R
-import com.example.verdant.login.ui.auth.AuthViewModel
 import com.example.verdant.navigation.NavigationItem
 import com.example.verdant.ui.AI.components.CameraView
-import com.example.verdant.ui.AddAppBar
-import com.example.verdant.ui.BottomBar
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.PermissionRequired
 import com.google.accompanist.permissions.rememberPermissionState
@@ -63,35 +46,48 @@ import com.google.mlkit.vision.label.ImageLabel
 
 @Composable
 fun AIUi(navController: NavController){
-    AIButton(onCardClick = { navController.navigate(NavigationItem.ImageClassifier.route) })
+    Column(modifier = Modifier.fillMaxSize()
+        .background(MaterialTheme.colorScheme.primaryContainer), verticalArrangement = Arrangement.Center){
+        AIButton(
+            onCardClick = { navController.navigate(NavigationItem.ImageClassifier.route) })
+    }
     //ImageLabelingScreen(navController = navController)
 }
 
 @Composable
 fun AIButton(onCardClick: () -> Unit){
-    Card(
-        shape = RoundedCornerShape(14.dp),
-        modifier = Modifier.padding(10.dp, 5.dp, 10.dp, 10.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
-    ) {
-        Column(modifier = Modifier.clickable(onClick = onCardClick)) {
-            Image(
-                painter = rememberImagePainter("https://developers.google.com/static/ml-kit/vision/image-labeling/images/image_labeling2x.png"),
-                contentDescription = null,
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .height(500.dp)
-                    .fillMaxWidth()
-                    .clip(RoundedCornerShape(bottomStart = 18.dp, bottomEnd = 18.dp))
-            )
+    val scroll = rememberScrollState()
 
-            Column(modifier = Modifier.padding(16.dp)) {
-                Text(
-                    text = "Descoperă lumea fascinantă a plantelor cu ajutorul lui Sherlock, modelul AI care te ajuta sa identifici este in fata ta.",
-                    style = MaterialTheme.typography.titleMedium,
+    Column(verticalArrangement = Arrangement.Center) {
+        Card(
+            shape = RoundedCornerShape(14.dp),
+            modifier = Modifier.padding(10.dp, 5.dp, 10.dp, 10.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
+        ) {
+            Column(
+                modifier = Modifier
+                    .clickable(onClick = onCardClick)
+                    .verticalScroll(state = scroll),
+                verticalArrangement = Arrangement.Bottom,
+
+                ) {
+                Image(
+                    painter = rememberImagePainter("https://developers.google.com/static/ml-kit/vision/image-labeling/images/image_labeling2x.png"),
+                    contentDescription = null,
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .height(300.dp)
+                        .clip(RoundedCornerShape(bottomStart = 18.dp, bottomEnd = 18.dp))
                 )
-                Spacer(modifier = Modifier.height(5.dp))
+
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Text(
+                        text = stringResource(R.string.desription_ai),
+                        style = MaterialTheme.typography.titleMedium,
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                }
             }
         }
     }
