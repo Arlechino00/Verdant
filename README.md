@@ -16,7 +16,7 @@
 </h4>
 
 
-<h2>Arhiectura Aplicatiei</h2>
+<h2>Arhitectura Aplicatiei</h2>
 
 - MVVM 
 
