@@ -88,7 +88,16 @@ fun AddAppBar(navController: NavController, searchTextState: String) {
                             fontWeight = FontWeight.Bold,
                             style = MaterialTheme.typography.headlineMedium
                         )
-                    } else {
+                    }
+                    else if(currentRoute == NavigationItem.ImageClassifier.route){
+                        Text(
+                            "Sherlock",
+                            color = MaterialTheme.colorScheme.surface,
+                            fontWeight = FontWeight.Bold,
+                            style = MaterialTheme.typography.headlineMedium
+                        )
+
+                    } else{
                         Text(
                             currentRoute.toString(),
                             color = MaterialTheme.colorScheme.surface,
@@ -99,14 +108,22 @@ fun AddAppBar(navController: NavController, searchTextState: String) {
                 }
             },
             navigationIcon = {
-                if (currentRoute == "PlantDetail/{id}" || currentRoute == NavigationItem.Profile.route
-                    ||currentRoute == NavigationItem.ImageClassifier.route) {
+                if (currentRoute == "PlantDetail/{id}" || currentRoute == NavigationItem.Profile.route) {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(
                             imageVector = Icons.Rounded.ArrowBack,
                             contentDescription = "Back",
                             tint = MaterialTheme.colorScheme.surface,
                             )
+                    }
+                }
+                if(currentRoute == NavigationItem.ImageClassifier.route){
+                    IconButton(onClick = { navController.navigate(NavigationItem.Sherlock.route) }) {
+                        Icon(
+                            imageVector = Icons.Rounded.ArrowBack,
+                            contentDescription = "Back",
+                            tint = MaterialTheme.colorScheme.surface,
+                        )
                     }
                 }
             },

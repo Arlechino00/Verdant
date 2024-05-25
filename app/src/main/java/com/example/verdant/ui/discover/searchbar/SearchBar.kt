@@ -58,7 +58,7 @@ fun SearchAppBar(
     when (searchWidgetState) {
         SearchWidgetState.CLOSED -> {
             DefaultFishAppBar(
-                text = "Discover",
+                text = "Descoperă",
                 onSearchClicked = onSearchTriggered
             )
         }

@@ -46,7 +46,6 @@ fun Discover(
     navController: NavController,
     searchTextState: String
 ) {
-
         PlantList(
             searchTextState,
             selectedPlant,

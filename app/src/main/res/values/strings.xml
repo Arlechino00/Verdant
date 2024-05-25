@@ -4,7 +4,7 @@
     <string name="password">Parola</string>
     <string name="login">Login</string>
     <string name="dont_have_account">Nu ai cont?</string>
-    <string name="name">Nume</string>
+    <string name="name">Prenume</string>
     <string name="signup">Inregistreaza-te</string>
     <string name="already_have_account">Ai deja un cont?</string>
     <string name="welcome_back">Bine ai revenit,</string>
@@ -330,7 +330,7 @@
     </string>
 
     <string name="sherlock">Sherlock</string>
-    <string name="desription_ai">Explorează lumea din jurul tău cu ajutorul lui Sherlock, modelul AI care te ajuta sa identifici este in fata ta.</string>
+    <string name="desription_ai">Explorează lumea din jurul tău cu ajutorul lui Sherlock, modelul AI care te ajuta sa identifici ce este in fața ta.</string>
 
 
 </resources>
