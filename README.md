@@ -40,14 +40,4 @@ Verdant is a modern Android application designed for plant enthusiasts and natur
 4.  Sync the project with Gradle files.
 5.  Build and run the app on an emulator or physical device.
 
-## Screenshots
 
-*(Coming soon! Check the `Screenshots` folder for preliminary views.)*
-
-## Contributing
-
-Contributions are welcome! If you'd like to improve Verdant, please feel free to fork the repository and submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details (if available).
